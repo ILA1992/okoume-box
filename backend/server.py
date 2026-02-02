@@ -206,12 +206,12 @@ async def get_me(user=Depends(get_current_user)):
 # ==================== BOXES ROUTES ====================
 
 @api_router.get("/boxes", response_model=List[BoxItem])
-async def get_boxes(category: Optional[str] = None, region: Optional[str] = None):
+async def get_boxes(category: Optional[str] = None, country: Optional[str] = None):
     query = {}
     if category:
         query["category"] = category
-    if region:
-        query["region"] = region
+    if country:
+        query["country"] = country
     boxes = await db.boxes.find(query, {"_id": 0}).to_list(100)
     return boxes
 
@@ -226,6 +226,17 @@ async def get_box(box_id: str):
 async def get_featured_boxes():
     boxes = await db.boxes.find({}, {"_id": 0}).to_list(6)
     return boxes
+
+@api_router.get("/countries")
+async def get_countries():
+    return [
+        {"id": "gabon", "name": "Gabon", "flag": "🇬🇦"},
+        {"id": "cameroun", "name": "Cameroun", "flag": "🇨🇲"},
+        {"id": "cote-ivoire", "name": "Côte d'Ivoire", "flag": "🇨🇮"},
+        {"id": "congo", "name": "Congo", "flag": "🇨🇩"},
+        {"id": "senegal", "name": "Sénégal", "flag": "🇸🇳"},
+        {"id": "multi", "name": "Multi-Pays", "flag": "🌍"}
+    ]
 
 # ==================== RECIPES ROUTES ====================
 
