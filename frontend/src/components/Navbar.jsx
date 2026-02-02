@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ShoppingCart, User, Menu, X, LogOut, ChefHat } from "lucide-react";
+import { ShoppingCart, User, Menu, X, LogOut, ChefHat, Crown } from "lucide-react";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +19,8 @@ export const Navbar = () => {
   const navLinks = [
     { path: "/", label: "Accueil" },
     { path: "/catalogue", label: "Nos Box" },
-    { path: "/blog", label: "Blog Recettes" },
+    { path: "/abonnement", label: "Abonnement" },
+    { path: "/blog", label: "Blog" },
   ];
 
   const isActive = (path) => location.pathname === path;
