@@ -19,7 +19,7 @@ const BlogPage = () => {
   }, []);
 
   useEffect(() => {
-    const params = countryFilter !== "all" ? `?region=${countryFilter}` : "";
+    const params = countryFilter !== "all" ? `?country=${countryFilter}` : "";
     axios.get(`${API}/recipes${params}`)
       .then(res => setRecipes(res.data))
       .catch(console.error)
