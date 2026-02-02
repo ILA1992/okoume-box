@@ -246,6 +246,133 @@ class AfroBoxAPITester:
         
         return chat_result is not None
 
+    def test_subscription_functionality(self):
+        """Test subscription system"""
+        print("\n💳 Testing Subscription Functionality...")
+        
+        # Test get subscription plans (no auth required)
+        plans_result = self.run_test("Get Subscription Plans", "GET", "subscriptions/plans", 200)
+        
+        if not plans_result:
+            return False
+        
+        # Validate plans structure
+        expected_plans = ["decouverte", "gourmet", "famille"]
+        expected_prices = {"decouverte": 29.00, "gourmet": 49.00, "famille": 89.00}
+        
+        plan_validation = True
+        if len(plans_result) != 3:
+            self.log_test("Plans Count Validation", False, f"Expected 3 plans, got {len(plans_result)}")
+            plan_validation = False
+        
+        for plan in plans_result:
+            if plan['id'] not in expected_plans:
+                self.log_test(f"Plan ID Validation ({plan['id']})", False, f"Unexpected plan ID: {plan['id']}")
+                plan_validation = False
+            elif plan['price_monthly'] != expected_prices[plan['id']]:
+                self.log_test(f"Plan Price Validation ({plan['id']})", False, f"Expected {expected_prices[plan['id']]}€, got {plan['price_monthly']}€")
+                plan_validation = False
+            else:
+                self.log_test(f"Plan Validation ({plan['id']})", True, f"Price: {plan['price_monthly']}€")
+        
+        # Test quarterly and yearly pricing calculations
+        for plan in plans_result:
+            monthly = plan['price_monthly']
+            quarterly = plan['price_quarterly']
+            yearly = plan['price_yearly']
+            
+            # Quarterly should be -10% (monthly * 3 * 0.9)
+            expected_quarterly = round(monthly * 3 * 0.9, 2)
+            # Yearly should be -20% (monthly * 12 * 0.8)
+            expected_yearly = round(monthly * 12 * 0.8, 2)
+            
+            if abs(quarterly - expected_quarterly) > 0.01:
+                self.log_test(f"Quarterly Price Calculation ({plan['id']})", False, f"Expected {expected_quarterly}€, got {quarterly}€")
+                plan_validation = False
+            else:
+                self.log_test(f"Quarterly Price Calculation ({plan['id']})", True, f"Correct: {quarterly}€")
+            
+            if abs(yearly - expected_yearly) > 0.01:
+                self.log_test(f"Yearly Price Calculation ({plan['id']})", False, f"Expected {expected_yearly}€, got {yearly}€")
+                plan_validation = False
+            else:
+                self.log_test(f"Yearly Price Calculation ({plan['id']})", True, f"Correct: {yearly}€")
+        
+        if not self.token:
+            print("❌ Cannot test subscription creation - no authentication token")
+            return plan_validation
+        
+        # Test get my subscription (should be empty initially)
+        my_sub_empty = self.run_test("Get My Subscription (Empty)", "GET", "subscriptions/my", 200)
+        
+        # Test create subscription
+        subscription_data = {
+            "plan_id": "decouverte",
+            "billing_cycle": "monthly",
+            "delivery_address": "123 Test Street, Paris 75001",
+            "phone": "+33123456789",
+            "preferred_countries": ["gabon", "cameroun"]
+        }
+        
+        create_sub = self.run_test("Create Subscription", "POST", "subscriptions", 200, subscription_data)
+        
+        if not create_sub:
+            return plan_validation
+        
+        # Test get my subscription (should now exist)
+        my_sub_active = self.run_test("Get My Subscription (Active)", "GET", "subscriptions/my", 200)
+        
+        # Test pause subscription
+        pause_sub = self.run_test("Pause Subscription", "PUT", "subscriptions/pause", 200, {})
+        
+        # Test resume subscription
+        resume_sub = self.run_test("Resume Subscription", "PUT", "subscriptions/resume", 200, {})
+        
+        # Test cancel subscription
+        cancel_sub = self.run_test("Cancel Subscription", "DELETE", "subscriptions/cancel", 200)
+        
+        return all([plan_validation, create_sub, my_sub_active, pause_sub, resume_sub, cancel_sub])
+
+    def test_box_catalog_validation(self):
+        """Test specific box catalog requirements"""
+        print("\n📋 Testing Box Catalog Validation...")
+        
+        # Get all boxes
+        boxes_result = self.run_test("Get All Boxes for Validation", "GET", "boxes", 200)
+        
+        if not boxes_result:
+            return False
+        
+        # Check total count (should be 12)
+        total_count = len(boxes_result)
+        count_validation = self.run_test("Total Box Count", total_count == 12, f"Expected 12 boxes, found {total_count}")
+        
+        # Check for specific "Box Découverte 5 Pays" at 29€
+        decouverte_box = None
+        for box in boxes_result:
+            if "BOX DÉCOUVERTE — 5 Pays en 1" in box['name'] or "box-decouverte-5-pays" == box['id']:
+                decouverte_box = box
+                break
+        
+        decouverte_validation = True
+        if decouverte_box:
+            if decouverte_box['price'] == 29.00:
+                self.log_test("Box Découverte 5 Pays Price", True, f"Correct price: {decouverte_box['price']}€")
+            else:
+                self.log_test("Box Découverte 5 Pays Price", False, f"Expected 29€, got {decouverte_box['price']}€")
+                decouverte_validation = False
+            
+            if decouverte_box['category'] == "decouverte":
+                self.log_test("Box Découverte Category", True, "Correct category: decouverte")
+            else:
+                self.log_test("Box Découverte Category", False, f"Expected 'decouverte', got '{decouverte_box['category']}'")
+                decouverte_validation = False
+        else:
+            self.log_test("Box Découverte 5 Pays Exists", False, "Box Découverte 5 Pays not found in catalog")
+            decouverte_validation = False
+        
+        return all([count_validation, decouverte_validation])
+
     def run_all_tests(self):
         """Run all tests in sequence"""
         print("🚀 Starting AfroBox API Tests...")
