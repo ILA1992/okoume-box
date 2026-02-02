@@ -345,7 +345,12 @@ class AfroBoxAPITester:
         
         # Check total count (should be 12)
         total_count = len(boxes_result)
-        count_validation = self.run_test("Total Box Count", total_count == 12, f"Expected 12 boxes, found {total_count}")
+        if total_count == 12:
+            self.log_test("Total Box Count", True, f"Correct: 12 boxes found")
+            count_validation = True
+        else:
+            self.log_test("Total Box Count", False, f"Expected 12 boxes, found {total_count}")
+            count_validation = False
         
         # Check for specific "Box Découverte 5 Pays" at 29€
         decouverte_box = None
