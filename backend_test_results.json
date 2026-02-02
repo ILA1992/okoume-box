@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-02T21:37:02.109354",
-  "total_tests": 23,
-  "passed_tests": 22,
-  "success_rate": 95.65217391304348,
+  "timestamp": "2026-02-02T22:02:15.634758",
+  "total_tests": 41,
+  "passed_tests": 41,
+  "success_rate": 100.0,
   "results": [
     {
       "test": "Seed Data",
@@ -50,12 +50,22 @@
       "details": "Status: 200"
     },
     {
+      "test": "Get All Boxes for Validation",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
       "test": "Get All Recipes",
-      "success": false,
-      "details": "Status: 520, Response: Internal Server Error"
+      "success": true,
+      "details": "Status: 200"
     },
     {
       "test": "Get Recipes by Region",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Recipe Detail",
       "success": true,
       "details": "Status: 200"
     },
@@ -106,6 +116,86 @@
     },
     {
       "test": "Get User Orders",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Subscription Plans",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Plan Validation (decouverte)",
+      "success": true,
+      "details": "Price: 29.0\u20ac"
+    },
+    {
+      "test": "Plan Validation (gourmet)",
+      "success": true,
+      "details": "Price: 49.0\u20ac"
+    },
+    {
+      "test": "Plan Validation (famille)",
+      "success": true,
+      "details": "Price: 89.0\u20ac"
+    },
+    {
+      "test": "Quarterly Price Calculation (decouverte)",
+      "success": true,
+      "details": "Correct: 78.3\u20ac"
+    },
+    {
+      "test": "Yearly Price Calculation (decouverte)",
+      "success": true,
+      "details": "Correct: 278.4\u20ac"
+    },
+    {
+      "test": "Quarterly Price Calculation (gourmet)",
+      "success": true,
+      "details": "Correct: 132.3\u20ac"
+    },
+    {
+      "test": "Yearly Price Calculation (gourmet)",
+      "success": true,
+      "details": "Correct: 470.4\u20ac"
+    },
+    {
+      "test": "Quarterly Price Calculation (famille)",
+      "success": true,
+      "details": "Correct: 240.3\u20ac"
+    },
+    {
+      "test": "Yearly Price Calculation (famille)",
+      "success": true,
+      "details": "Correct: 854.4\u20ac"
+    },
+    {
+      "test": "Get My Subscription (Empty)",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Create Subscription",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get My Subscription (Active)",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Pause Subscription",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Resume Subscription",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Cancel Subscription",
       "success": true,
       "details": "Status: 200"
     },
