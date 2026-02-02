@@ -241,10 +241,10 @@ async def get_countries():
 # ==================== RECIPES ROUTES ====================
 
 @api_router.get("/recipes", response_model=List[RecipeItem])
-async def get_recipes(region: Optional[str] = None):
+async def get_recipes(country: Optional[str] = None):
     query = {}
-    if region:
-        query["region"] = region
+    if country:
+        query["country"] = country
     recipes = await db.recipes.find(query, {"_id": 0}).to_list(50)
     return recipes
 
