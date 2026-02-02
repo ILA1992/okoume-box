@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-02-02T22:02:15.634758",
-  "total_tests": 41,
-  "passed_tests": 41,
+  "timestamp": "2026-02-02T22:02:46.079566",
+  "total_tests": 44,
+  "passed_tests": 44,
   "success_rate": 100.0,
   "results": [
     {
@@ -53,6 +53,21 @@
       "test": "Get All Boxes for Validation",
       "success": true,
       "details": "Status: 200"
+    },
+    {
+      "test": "Total Box Count",
+      "success": true,
+      "details": "Correct: 12 boxes found"
+    },
+    {
+      "test": "Box D\u00e9couverte 5 Pays Price",
+      "success": true,
+      "details": "Correct price: 29.0\u20ac"
+    },
+    {
+      "test": "Box D\u00e9couverte Category",
+      "success": true,
+      "details": "Correct category: decouverte"
     },
     {
       "test": "Get All Recipes",
