@@ -66,14 +66,17 @@ class BoxItem(BaseModel):
     description: str
     price: float
     image_url: str
-    category: str  # decouverte, famille, solo
-    region: str  # nord, sud, est, ouest
+    category: str  # decouverte, famille, signature, multi-pays
+    country: str  # gabon, cameroun, cote-ivoire, congo, senegal, multi
+    country_flag: str = ""  # emoji flag
     serves: int
     prep_time: int  # minutes
     calories: int
     ingredients: List[str]
     recipe_steps: List[str]
+    dishes: List[dict] = []  # Liste des plats inclus dans la box
     nutritional_info: dict
+    highlights: List[str] = []  # Points forts de la box
     is_vegetarian: bool = False
     is_vegan: bool = False
     is_gluten_free: bool = False
