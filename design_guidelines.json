@@ -1,0 +1,153 @@
+{
+  "brand_identity": {
+    "name": "AfroBox",
+    "mission": "Revisiter la cuisine africaine pour la rendre saine, accessible et moderne.",
+    "tone": "Chaleureux, Authentique, Moderne, Santé, Accueillant",
+    "target_audience": "Diaspora africaine, Foodies, Personnes soucieuses de leur santé"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weights": ["600", "700"],
+      "usage": "Titres principaux (H1, H2), Noms des plats",
+      "letter_spacing": "-0.02em"
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "weights": ["400", "500", "600"],
+      "usage": "Texte courant, descriptions, boutons",
+      "line_height": "1.6"
+    },
+    "accents": {
+      "font_family": "Manrope, sans-serif",
+      "weights": ["700"],
+      "usage": "Prix, Labels, Tags",
+      "transform": "uppercase",
+      "letter_spacing": "0.05em"
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#D97706",
+      "foreground": "#FFFFFF",
+      "description": "Amber 600 - Chaleur, Épices, Appétit"
+    },
+    "secondary": {
+      "DEFAULT": "#15803D",
+      "foreground": "#FFFFFF",
+      "description": "Green 700 - Nature, Santé, Fraîcheur"
+    },
+    "accent": {
+      "DEFAULT": "#F59E0B",
+      "foreground": "#1C1917",
+      "description": "Amber 500 - Soleil, Énergie"
+    },
+    "background": {
+      "DEFAULT": "#FFFBEB",
+      "alt": "#FEF3C7",
+      "description": "Amber 50 / Amber 100 - Crème chaude, pas de blanc stérile"
+    },
+    "text": {
+      "primary": "#1C1917",
+      "secondary": "#44403C",
+      "muted": "#78716C",
+      "description": "Stone 900/700/500 - Gris chauds pour la lisibilité"
+    },
+    "status": {
+      "success": "#16A34A",
+      "error": "#DC2626",
+      "warning": "#D97706",
+      "info": "#2563EB"
+    }
+  },
+  "layout": {
+    "container": {
+      "maxWidth": "1280px",
+      "padding": "2rem"
+    },
+    "grid": {
+      "marketing": "grid-cols-1 md:grid-cols-12 gap-8",
+      "catalog": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8",
+      "features": "grid-cols-1 md:grid-cols-3 gap-12"
+    },
+    "spacing": {
+      "section_padding": "py-20 md:py-32",
+      "element_gap": "gap-6"
+    },
+    "radius": {
+      "default": "rounded-xl",
+      "button": "rounded-full",
+      "card": "rounded-2xl"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300",
+      "secondary": "bg-white text-primary border-2 border-primary hover:bg-primary/5 rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300",
+      "ghost": "text-primary hover:bg-primary/10 rounded-full px-6 py-4 font-medium"
+    },
+    "cards": {
+      "recipe": "bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-stone-100 group",
+      "feature": "bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-stone-200/50 hover:border-primary/20 transition-all duration-300"
+    },
+    "inputs": {
+      "default": "bg-white border-stone-200 focus:border-primary focus:ring-primary/20 rounded-lg h-12 px-4"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "soft": "0 4px 20px -2px rgba(28, 25, 23, 0.05)",
+      "hover": "0 10px 25px -5px rgba(217, 119, 6, 0.15)"
+    },
+    "textures": {
+      "grain": "url('/assets/noise.png') opacity-5",
+      "pattern": "Subtle African geometric patterns in background (SVG)"
+    },
+    "gradients": {
+      "hero": "bg-gradient-to-r from-amber-50 to-white",
+      "overlay": "bg-gradient-to-t from-black/60 to-transparent"
+    }
+  },
+  "image_urls": {
+    "hero": {
+      "main": "https://images.unsplash.com/photo-1681936488318-d7607d5472cd",
+      "alt": "Famille heureuse partageant un repas sain"
+    },
+    "dishes": {
+      "jollof": "https://images.unsplash.com/photo-1604382440115-5f730e6ede1f",
+      "yassa": "https://images.unsplash.com/photo-1543826173-cfe2ca17577d",
+      "tagine": "https://images.unsplash.com/photo-1651718543197-f567aeaa4fb0",
+      "mafe": "https://images.unsplash.com/photo-1543826173-cfe2ca17577d"
+    },
+    "ingredients": {
+      "spices": "https://images.unsplash.com/photo-1758745464235-ccb8c1253074",
+      "vegetables": "https://images.unsplash.com/photo-1759344114577-b6c32e4d68c8"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": "Utilisez les composants Shadcn existants mais surchargez les styles via Tailwind pour correspondre à l'identité 'AfroBox'. Ne jamais utiliser de gris froids (slate/gray), préférez les tons chauds (stone/warmGray).",
+    "layout": "Privilégiez l'espace blanc (ou crème). Ne surchargez pas. Utilisez des grilles asymétriques pour les sections éditoriales (Blog, À propos).",
+    "accessibility": "Assurez-vous que le texte orange sur fond blanc a un contraste suffisant. Si nécessaire, foncez légèrement l'orange pour le texte.",
+    "motion": "Ajoutez des micro-interactions douces (fade-in au scroll, scale-up au hover sur les cartes). Utilisez Framer Motion pour les transitions de page si possible."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}
