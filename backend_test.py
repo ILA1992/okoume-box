@@ -395,9 +395,11 @@ class AfroBoxAPITester:
             ("Data Seeding", self.test_seed_data),
             ("Authentication", self.test_authentication),
             ("Boxes Endpoints", self.test_boxes_endpoints),
+            ("Box Catalog Validation", self.test_box_catalog_validation),
             ("Recipes Endpoints", self.test_recipes_endpoints),
             ("Cart Functionality", self.test_cart_functionality),
             ("Orders Functionality", self.test_orders_functionality),
+            ("Subscription Functionality", self.test_subscription_functionality),
             ("Chat Functionality", self.test_chat_functionality)
         ]
         
