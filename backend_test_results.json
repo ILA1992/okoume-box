@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-02-02T21:06:51.604020",
+  "total_tests": 24,
+  "passed_tests": 24,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "test": "Seed Data",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "User Registration",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "User Login",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Current User",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get All Boxes",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Featured Boxes",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Boxes by Category",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Boxes by Region",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Box Detail",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get All Recipes",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Recipes by Region",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Recipe Detail",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Empty Cart",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Boxes for Cart Test",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Add to Cart",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Cart with Items",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Update Cart Quantity",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Remove from Cart",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Boxes for Order Test",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Add to Cart for Order",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Create Order",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get User Orders",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Send Chat Message",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Chat History",
+      "success": true,
+      "details": "Status: 200"
+    }
+  ]
+}
