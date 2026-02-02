@@ -13,17 +13,12 @@ const AuthPage = () => {
   const navigate = useNavigate();
   const { login, register, user } = useAuth();
   const [loading, setLoading] = useState(false);
-  
-  // Login form
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  
-  // Register form
   const [registerName, setRegisterName] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
 
-  // Redirect if already logged in
   if (user) {
     navigate("/");
     return null;
@@ -37,7 +32,6 @@ const AuthPage = () => {
       toast.success("Connexion réussie !");
       navigate("/");
     } catch (error) {
-      console.error("Login error:", error);
       toast.error(error.response?.data?.detail || "Erreur de connexion");
     } finally {
       setLoading(false);
@@ -52,7 +46,6 @@ const AuthPage = () => {
       toast.success("Compte créé avec succès !");
       navigate("/");
     } catch (error) {
-      console.error("Register error:", error);
       toast.error(error.response?.data?.detail || "Erreur lors de l'inscription");
     } finally {
       setLoading(false);
@@ -61,225 +54,110 @@ const AuthPage = () => {
 
   return (
     <div className="min-h-screen bg-amber-50 flex" data-testid="auth-page">
-      {/* Left Side - Branding */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-amber-600 to-amber-500 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 flex flex-col justify-center items-center p-12 text-white">
           <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mb-6">
             <ChefHat className="w-10 h-10" />
           </div>
-          <h1 className="font-heading text-4xl font-bold mb-4 text-center">
-            Bienvenue sur AfroBox
-          </h1>
+          <h1 className="font-heading text-4xl font-bold mb-4 text-center">Bienvenue sur AfroBox</h1>
           <p className="text-amber-100 text-center max-w-md mb-8">
-            Découvrez la cuisine africaine saine et savoureuse. Des box équilibrées 
-            livrées chez vous avec tous les ingrédients et recettes.
+            Découvrez la cuisine africaine saine et savoureuse. Des box équilibrées livrées chez vous.
           </p>
-          
           <div className="space-y-4 text-left">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                <Leaf className="w-4 h-4" />
-              </div>
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center"><Leaf className="w-4 h-4" /></div>
               <span>Recettes équilibrées et diététiques</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                <Leaf className="w-4 h-4" />
-              </div>
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center"><Leaf className="w-4 h-4" /></div>
               <span>Ingrédients frais et de qualité</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                <Leaf className="w-4 h-4" />
-              </div>
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center"><Leaf className="w-4 h-4" /></div>
               <span>Assistant IA pour personnaliser vos plats</span>
             </div>
           </div>
         </div>
-        
-        {/* Decorative elements */}
         <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-white/10"></div>
-        <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-white/10"></div>
       </div>
 
-      {/* Right Side - Forms */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
-          {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
             <Link to="/" className="inline-flex items-center gap-2">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
                 <ChefHat className="w-6 h-6 text-white" />
               </div>
-              <span className="font-heading text-2xl font-bold text-stone-900">
-                Afro<span className="text-amber-600">Box</span>
-              </span>
+              <span className="font-heading text-2xl font-bold text-stone-900">Afro<span className="text-amber-600">Box</span></span>
             </Link>
           </div>
 
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6 bg-stone-100 p-1 rounded-full">
-              <TabsTrigger 
-                value="login" 
-                className="rounded-full data-[state=active]:bg-white data-[state=active]:shadow-sm"
-                data-testid="login-tab"
-              >
-                Connexion
-              </TabsTrigger>
-              <TabsTrigger 
-                value="register" 
-                className="rounded-full data-[state=active]:bg-white data-[state=active]:shadow-sm"
-                data-testid="register-tab"
-              >
-                Inscription
-              </TabsTrigger>
+              <TabsTrigger value="login" className="rounded-full data-[state=active]:bg-white" data-testid="login-tab">Connexion</TabsTrigger>
+              <TabsTrigger value="register" className="rounded-full data-[state=active]:bg-white" data-testid="register-tab">Inscription</TabsTrigger>
             </TabsList>
 
-            {/* Login Form */}
             <TabsContent value="login">
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <CardTitle className="font-heading text-2xl">Content de vous revoir !</CardTitle>
-                  <CardDescription>
-                    Connectez-vous pour accéder à votre compte
-                  </CardDescription>
+                  <CardDescription>Connectez-vous pour accéder à votre compte</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="login-email" className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-amber-600" />
-                        Email
-                      </Label>
-                      <Input 
-                        id="login-email"
-                        type="email"
-                        value={loginEmail}
-                        onChange={(e) => setLoginEmail(e.target.value)}
-                        placeholder="votre@email.com"
-                        required
-                        className="border-stone-200 focus:border-amber-500"
-                        data-testid="login-email-input"
-                      />
+                      <Label className="flex items-center gap-2"><Mail className="w-4 h-4 text-amber-600" />Email</Label>
+                      <Input type="email" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)}
+                        placeholder="votre@email.com" required data-testid="login-email-input" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="login-password" className="flex items-center gap-2">
-                        <Lock className="w-4 h-4 text-amber-600" />
-                        Mot de passe
-                      </Label>
-                      <Input 
-                        id="login-password"
-                        type="password"
-                        value={loginPassword}
-                        onChange={(e) => setLoginPassword(e.target.value)}
-                        placeholder="••••••••"
-                        required
-                        className="border-stone-200 focus:border-amber-500"
-                        data-testid="login-password-input"
-                      />
+                      <Label className="flex items-center gap-2"><Lock className="w-4 h-4 text-amber-600" />Mot de passe</Label>
+                      <Input type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)}
+                        placeholder="••••••••" required data-testid="login-password-input" />
                     </div>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-amber-600 hover:bg-amber-700 rounded-full py-6"
-                      disabled={loading}
-                      data-testid="login-submit-btn"
-                    >
-                      {loading ? (
-                        <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" />
-                      ) : null}
-                      Se connecter
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                    <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700 rounded-full py-6" disabled={loading} data-testid="login-submit-btn">
+                      {loading && <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" />}
+                      Se connecter <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </form>
                 </CardContent>
               </Card>
             </TabsContent>
 
-            {/* Register Form */}
             <TabsContent value="register">
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <CardTitle className="font-heading text-2xl">Créer un compte</CardTitle>
-                  <CardDescription>
-                    Rejoignez la communauté AfroBox
-                  </CardDescription>
+                  <CardDescription>Rejoignez la communauté AfroBox</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleRegister} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="register-name" className="flex items-center gap-2">
-                        <User className="w-4 h-4 text-amber-600" />
-                        Nom complet
-                      </Label>
-                      <Input 
-                        id="register-name"
-                        type="text"
-                        value={registerName}
-                        onChange={(e) => setRegisterName(e.target.value)}
-                        placeholder="Jean Dupont"
-                        required
-                        className="border-stone-200 focus:border-amber-500"
-                        data-testid="register-name-input"
-                      />
+                      <Label className="flex items-center gap-2"><User className="w-4 h-4 text-amber-600" />Nom</Label>
+                      <Input value={registerName} onChange={(e) => setRegisterName(e.target.value)}
+                        placeholder="Jean Dupont" required data-testid="register-name-input" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="register-email" className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-amber-600" />
-                        Email
-                      </Label>
-                      <Input 
-                        id="register-email"
-                        type="email"
-                        value={registerEmail}
-                        onChange={(e) => setRegisterEmail(e.target.value)}
-                        placeholder="votre@email.com"
-                        required
-                        className="border-stone-200 focus:border-amber-500"
-                        data-testid="register-email-input"
-                      />
+                      <Label className="flex items-center gap-2"><Mail className="w-4 h-4 text-amber-600" />Email</Label>
+                      <Input type="email" value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)}
+                        placeholder="votre@email.com" required data-testid="register-email-input" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="register-password" className="flex items-center gap-2">
-                        <Lock className="w-4 h-4 text-amber-600" />
-                        Mot de passe
-                      </Label>
-                      <Input 
-                        id="register-password"
-                        type="password"
-                        value={registerPassword}
-                        onChange={(e) => setRegisterPassword(e.target.value)}
-                        placeholder="••••••••"
-                        required
-                        minLength={6}
-                        className="border-stone-200 focus:border-amber-500"
-                        data-testid="register-password-input"
-                      />
+                      <Label className="flex items-center gap-2"><Lock className="w-4 h-4 text-amber-600" />Mot de passe</Label>
+                      <Input type="password" value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)}
+                        placeholder="••••••••" required minLength={6} data-testid="register-password-input" />
                     </div>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-amber-600 hover:bg-amber-700 rounded-full py-6"
-                      disabled={loading}
-                      data-testid="register-submit-btn"
-                    >
-                      {loading ? (
-                        <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" />
-                      ) : null}
-                      Créer mon compte
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                    <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700 rounded-full py-6" disabled={loading} data-testid="register-submit-btn">
+                      {loading && <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" />}
+                      Créer mon compte <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </form>
                 </CardContent>
               </Card>
             </TabsContent>
           </Tabs>
-
-          <p className="text-center text-sm text-stone-500 mt-6">
-            En continuant, vous acceptez nos{" "}
-            <a href="#" className="text-amber-600 hover:underline">CGV</a>
-            {" "}et notre{" "}
-            <a href="#" className="text-amber-600 hover:underline">politique de confidentialité</a>.
-          </p>
         </div>
       </div>
     </div>
