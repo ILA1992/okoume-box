@@ -66,3 +66,22 @@ Créer un site comme HelloFresh/Quitoque pour des box alimentaires africaines é
 2. Envoyer emails de confirmation (Resend/SendGrid)
 3. Dashboard admin pour gérer box et commandes
 4. Système d'avis et notes
+
+---
+## Update Feb 2, 2026 - Nouvelles Box Téré
+
+### 11 Box Authentiques Ajoutées
+| Pays | Box | Prix |
+|------|-----|------|
+| 🇬🇦 Gabon | Nyembwe, Nkumu & Ngondo | 65€, 59€ |
+| 🇨🇲 Cameroun | Ndolé Royal, Poulet DG, Koki & Ekwang | 62€, 58€, 64€ |
+| 🇨🇮 Côte d'Ivoire | Garba & Attiéké, Sauce Claire | 56€, 54€ |
+| 🇨🇩 Congo | Pondu & Saka Saka, Mikate & Maboke | 61€, 58€ |
+| 🇸🇳 Sénégal | Thiéboudienne & Yassa | 63€ |
+| 🌍 Multi-Pays | Tour d'Afrique Centrale | 75€ |
+
+### Nouvelles Fonctionnalités
+- Filtre par pays avec drapeaux
+- Affichage des 4 plats inclus par box
+- Highlights et points forts
+- 5 nouvelles recettes de blog
