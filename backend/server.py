@@ -86,7 +86,7 @@ class RecipeItem(BaseModel):
     title: str
     description: str
     image_url: str
-    region: str
+    country: str
     author: str
     prep_time: int
     cook_time: int
