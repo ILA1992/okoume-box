@@ -271,7 +271,7 @@ const SubscriptionPage = () => {
           <DialogHeader>
             <DialogTitle className="font-heading text-xl">Finaliser l'abonnement {selectedPlan?.name}</DialogTitle>
             <DialogDescription>
-              {getPrice(selectedPlan || {}).toFixed(0)}€/{billingCycle === "monthly" ? "mois" : billingCycle === "quarterly" ? "trimestre" : "an"}
+              {selectedPlan ? `${getPrice(selectedPlan).toFixed(0)}€/${billingCycle === "monthly" ? "mois" : billingCycle === "quarterly" ? "trimestre" : "an"}` : ""}
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubscribe} className="space-y-4">
