@@ -13,6 +13,7 @@ import BlogArticlePage from "@/pages/BlogArticlePage";
 import CartPage from "@/pages/CartPage";
 import AuthPage from "@/pages/AuthPage";
 import ProfilePage from "@/pages/ProfilePage";
+import SubscriptionPage from "@/pages/SubscriptionPage";
 
 // Components
 import Navbar from "@/components/Navbar";
