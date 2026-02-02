@@ -109,12 +109,14 @@ const SubscriptionPage = () => {
   };
 
   const getPrice = (plan) => {
+    if (!plan) return 0;
     if (billingCycle === "monthly") return plan.price_monthly;
     if (billingCycle === "quarterly") return plan.price_quarterly;
     return plan.price_yearly;
   };
 
   const getSavings = (plan) => {
+    if (!plan) return 0;
     if (billingCycle === "monthly") return 0;
     if (billingCycle === "quarterly") return Math.round((plan.price_monthly * 3 - plan.price_quarterly) * 100) / 100;
     return Math.round((plan.price_monthly * 12 - plan.price_yearly) * 100) / 100;
