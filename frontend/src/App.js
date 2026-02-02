@@ -133,6 +133,7 @@ function App() {
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:id" element={<BlogArticlePage />} />
               <Route path="/auth" element={<AuthPage />} />
+              <Route path="/abonnement" element={<SubscriptionPage />} />
               <Route path="/cart" element={
                 <ProtectedRoute>
                   <CartPage />
