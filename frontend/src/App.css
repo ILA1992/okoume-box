@@ -1,34 +1,174 @@
-.App-logo {
-    height: 40vmin;
+/* AfroBox Custom Styles */
+
+/* Hero section pattern */
+.hero-pattern {
+    background-color: #FFFBEB;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D97706' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(217, 119, 6, 0.2);
+}
+
+/* Image overlay gradient */
+.image-overlay {
+    position: relative;
+}
+
+.image-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
     pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Button styles */
+.btn-primary {
+    background-color: #D97706;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
+.btn-primary:hover {
+    background-color: #B45309;
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #D97706;
+    border: 2px solid #D97706;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(217, 119, 6, 0.05);
+    transform: scale(1.02);
+}
+
+/* Navigation styles */
+.nav-link {
+    color: #44403C;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #D97706;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #D97706;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Badge styles */
+.badge-region {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-nord { background-color: #FEF3C7; color: #92400E; }
+.badge-sud { background-color: #DCFCE7; color: #166534; }
+.badge-est { background-color: #FEE2E2; color: #991B1B; }
+.badge-ouest { background-color: #DBEAFE; color: #1E40AF; }
+
+/* Chat widget styles */
+.chat-bubble {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+}
+
+.chat-bubble-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D97706, #F59E0B);
+    color: white;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.App-link {
-    color: #61dafb;
+.chat-bubble-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(217, 119, 6, 0.5);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+/* Section divider */
+.section-divider {
+    height: 4px;
+    background: linear-gradient(to right, transparent, #D97706, transparent);
+    margin: 4rem auto;
+    max-width: 200px;
+    border-radius: 2px;
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #FEF3C7 25%, #FDE68A 50%, #FEF3C7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Responsive container */
+.container-custom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .container-custom {
+        padding: 0 2rem;
     }
-    to {
-        transform: rotate(360deg);
-    }
+}
+
+/* Form input focus */
+.input-focus:focus {
+    outline: none;
+    border-color: #D97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
 }
