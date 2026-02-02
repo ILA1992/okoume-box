@@ -20,6 +20,7 @@ const CataloguePage = () => {
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     const params = new URLSearchParams();
     if (countryFilter !== "all") params.append("country", countryFilter);
     if (categoryFilter !== "all") params.append("category", categoryFilter);
