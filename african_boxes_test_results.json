@@ -1,0 +1,158 @@
+{
+  "timestamp": "2026-02-02T21:37:39.439894",
+  "tests_passed": 30,
+  "tests_total": 30,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "test": "11 boxes loaded correctly",
+      "passed": true,
+      "details": "Found 11 boxes"
+    },
+    {
+      "test": "Country filter 'gabon' works",
+      "passed": true,
+      "details": "Found 2 boxes"
+    },
+    {
+      "test": "Country filter 'cameroun' works",
+      "passed": true,
+      "details": "Found 3 boxes"
+    },
+    {
+      "test": "Country filter 'cote-ivoire' works",
+      "passed": true,
+      "details": "Found 2 boxes"
+    },
+    {
+      "test": "Country filter 'congo' works",
+      "passed": true,
+      "details": "Found 2 boxes"
+    },
+    {
+      "test": "Country filter 'senegal' works",
+      "passed": true,
+      "details": "Found 1 boxes"
+    },
+    {
+      "test": "Country flags correct",
+      "passed": true,
+      "details": "Found 6 countries"
+    },
+    {
+      "test": "Box 'BOX NYEMBWE \u2014 L'Or du Gabon' has 4 dishes",
+      "passed": true,
+      "details": "Found 4 dishes"
+    },
+    {
+      "test": "Box 'BOX NYEMBWE \u2014 L'Or du Gabon' price in range",
+      "passed": true,
+      "details": "Price: 65.0\u20ac"
+    },
+    {
+      "test": "Box 'BOX NYEMBWE \u2014 L'Or du Gabon' has highlights",
+      "passed": true,
+      "details": "Found 3 highlights"
+    },
+    {
+      "test": "Box 'BOX NYEMBWE \u2014 L'Or du Gabon' has nutrition info",
+      "passed": true,
+      "details": "Nutrition keys: ['proteins', 'carbs', 'fats', 'fiber']"
+    },
+    {
+      "test": "Box 'BOX NKUMU & NGONDO \u2014 Saveurs de la For\u00eat' has 4 dishes",
+      "passed": true,
+      "details": "Found 4 dishes"
+    },
+    {
+      "test": "Box 'BOX NKUMU & NGONDO \u2014 Saveurs de la For\u00eat' price in range",
+      "passed": true,
+      "details": "Price: 59.0\u20ac"
+    },
+    {
+      "test": "Box 'BOX NKUMU & NGONDO \u2014 Saveurs de la For\u00eat' has highlights",
+      "passed": true,
+      "details": "Found 3 highlights"
+    },
+    {
+      "test": "Box 'BOX NKUMU & NGONDO \u2014 Saveurs de la For\u00eat' has nutrition info",
+      "passed": true,
+      "details": "Nutrition keys: ['proteins', 'carbs', 'fats', 'fiber']"
+    },
+    {
+      "test": "Box 'BOX NDOL\u00c9 ROYAL \u2014 Le Plat National' has 4 dishes",
+      "passed": true,
+      "details": "Found 4 dishes"
+    },
+    {
+      "test": "Box 'BOX NDOL\u00c9 ROYAL \u2014 Le Plat National' price in range",
+      "passed": true,
+      "details": "Price: 62.0\u20ac"
+    },
+    {
+      "test": "Box 'BOX NDOL\u00c9 ROYAL \u2014 Le Plat National' has highlights",
+      "passed": true,
+      "details": "Found 3 highlights"
+    },
+    {
+      "test": "Box 'BOX NDOL\u00c9 ROYAL \u2014 Le Plat National' has nutrition info",
+      "passed": true,
+      "details": "Nutrition keys: ['proteins', 'carbs', 'fats', 'fiber']"
+    },
+    {
+      "test": "Box containing 'nyembwe' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'nkumu' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'ndole' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'poulet-dg' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'koki' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'garba' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'sauce-claire' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'pondu' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'mikate' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'thieboudienne' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    },
+    {
+      "test": "Box containing 'tour-afrique-centrale' exists",
+      "passed": true,
+      "details": "Searched in 11 boxes"
+    }
+  ]
+}
