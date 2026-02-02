@@ -461,6 +461,129 @@ async def get_chat_history(session_id: str, user=Depends(get_current_user)):
     ).sort("timestamp", 1).to_list(100)
     return history
 
+# ==================== SUBSCRIPTION ROUTES ====================
+
+SUBSCRIPTION_PLANS = [
+    {
+        "id": "decouverte",
+        "name": "Découverte",
+        "description": "Idéal pour découvrir les saveurs africaines. 1 box au choix par mois.",
+        "price_monthly": 29.00,
+        "price_quarterly": 78.30,  # -10%
+        "price_yearly": 278.40,    # -20%
+        "boxes_per_month": 1,
+        "features": ["1 box par mois", "Livraison gratuite", "Recettes détaillées", "Support client"],
+        "is_popular": False
+    },
+    {
+        "id": "gourmet",
+        "name": "Gourmet",
+        "description": "Pour les amateurs. 2 box par mois avec -15% sur le prix unitaire.",
+        "price_monthly": 49.00,
+        "price_quarterly": 132.30,
+        "price_yearly": 470.40,
+        "boxes_per_month": 2,
+        "features": ["2 box par mois", "-15% sur chaque box", "Livraison gratuite", "Accès prioritaire nouveautés", "Recettes exclusives"],
+        "is_popular": True
+    },
+    {
+        "id": "famille",
+        "name": "Famille",
+        "description": "Parfait pour les familles. 4 box par mois avec -25% sur le prix.",
+        "price_monthly": 89.00,
+        "price_quarterly": 240.30,
+        "price_yearly": 854.40,
+        "boxes_per_month": 4,
+        "features": ["4 box par mois", "-25% sur chaque box", "Livraison gratuite", "Accès VIP", "Conseils nutritionniste IA illimités", "Cadeaux surprise"],
+        "is_popular": False
+    }
+]
+
+@api_router.get("/subscriptions/plans")
+async def get_subscription_plans():
+    return SUBSCRIPTION_PLANS
+
+@api_router.post("/subscriptions", response_model=SubscriptionResponse)
+async def create_subscription(sub_data: SubscriptionCreate, user=Depends(get_current_user)):
+    # Find plan
+    plan = next((p for p in SUBSCRIPTION_PLANS if p["id"] == sub_data.plan_id), None)
+    if not plan:
+        raise HTTPException(status_code=400, detail="Plan non trouvé")
+    
+    # Calculate price based on billing cycle
+    if sub_data.billing_cycle == "monthly":
+        price = plan["price_monthly"]
+    elif sub_data.billing_cycle == "quarterly":
+        price = plan["price_quarterly"]
+    elif sub_data.billing_cycle == "yearly":
+        price = plan["price_yearly"]
+    else:
+        raise HTTPException(status_code=400, detail="Cycle de facturation invalide")
+    
+    # Check if user already has active subscription
+    existing = await db.subscriptions.find_one({"user_id": user["id"], "status": "active"})
+    if existing:
+        raise HTTPException(status_code=400, detail="Vous avez déjà un abonnement actif")
+    
+    # Calculate next delivery date (next week)
+    next_delivery = (datetime.now(timezone.utc) + timedelta(days=7)).strftime("%Y-%m-%d")
+    
+    sub_id = str(uuid.uuid4())
+    sub_doc = {
+        "id": sub_id,
+        "user_id": user["id"],
+        "plan_id": sub_data.plan_id,
+        "plan_name": plan["name"],
+        "billing_cycle": sub_data.billing_cycle,
+        "price": price,
+        "status": "active",
+        "delivery_address": sub_data.delivery_address,
+        "phone": sub_data.phone,
+        "preferred_countries": sub_data.preferred_countries,
+        "next_delivery_date": next_delivery,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    }
+    await db.subscriptions.insert_one(sub_doc)
+    
+    return SubscriptionResponse(**{k: v for k, v in sub_doc.items() if k != "phone"})
+
+@api_router.get("/subscriptions/my", response_model=Optional[SubscriptionResponse])
+async def get_my_subscription(user=Depends(get_current_user)):
+    sub = await db.subscriptions.find_one({"user_id": user["id"], "status": {"$in": ["active", "paused"]}}, {"_id": 0, "phone": 0})
+    if not sub:
+        return None
+    return sub
+
+@api_router.put("/subscriptions/pause")
+async def pause_subscription(user=Depends(get_current_user)):
+    result = await db.subscriptions.update_one(
+        {"user_id": user["id"], "status": "active"},
+        {"$set": {"status": "paused"}}
+    )
+    if result.modified_count == 0:
+        raise HTTPException(status_code=400, detail="Aucun abonnement actif trouvé")
+    return {"message": "Abonnement mis en pause"}
+
+@api_router.put("/subscriptions/resume")
+async def resume_subscription(user=Depends(get_current_user)):
+    result = await db.subscriptions.update_one(
+        {"user_id": user["id"], "status": "paused"},
+        {"$set": {"status": "active", "next_delivery_date": (datetime.now(timezone.utc) + timedelta(days=7)).strftime("%Y-%m-%d")}}
+    )
+    if result.modified_count == 0:
+        raise HTTPException(status_code=400, detail="Aucun abonnement en pause trouvé")
+    return {"message": "Abonnement réactivé"}
+
+@api_router.delete("/subscriptions/cancel")
+async def cancel_subscription(user=Depends(get_current_user)):
+    result = await db.subscriptions.update_one(
+        {"user_id": user["id"], "status": {"$in": ["active", "paused"]}},
+        {"$set": {"status": "cancelled"}}
+    )
+    if result.modified_count == 0:
+        raise HTTPException(status_code=400, detail="Aucun abonnement trouvé")
+    return {"message": "Abonnement annulé"}
+
 # ==================== SEED DATA ====================
 
 @api_router.post("/seed")
