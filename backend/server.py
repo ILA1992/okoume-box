@@ -593,6 +593,34 @@ async def seed_data():
     await db.recipes.delete_many({})
     
     boxes = [
+        # === BOX DÉCOUVERTE SPÉCIALE ===
+        {
+            "id": "box-decouverte-5-pays",
+            "name": "BOX DÉCOUVERTE — 5 Pays en 1",
+            "description": "L'initiation parfaite ! Goûtez 1 plat emblématique de chaque pays : Gabon, Cameroun, Côte d'Ivoire, Congo et Sénégal. Idéal pour découvrir l'Afrique.",
+            "price": 29.00,
+            "image_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+            "category": "decouverte",
+            "country": "multi",
+            "country_flag": "🌍",
+            "serves": 2,
+            "prep_time": 45,
+            "calories": 380,
+            "ingredients": ["Mini portion Nyembwe (Gabon)", "Mini Ndolé (Cameroun)", "Mini Attiéké-Garba (Côte d'Ivoire)", "Mini Pondu (Congo)", "Mini Thiéboudienne (Sénégal)"],
+            "recipe_steps": ["Préparer chaque plat selon sa recette", "Présenter en format dégustation", "Accompagner de riz ou foutou", "Déguster et voyager !"],
+            "dishes": [
+                {"name": "Poulet Nyembwe", "desc": "🇬🇦 Gabon — Sauce noix de palme"},
+                {"name": "Ndolé aux crevettes", "desc": "🇨🇲 Cameroun — Feuilles amères"},
+                {"name": "Garba", "desc": "🇨🇮 Côte d'Ivoire — Attiéké au thon"},
+                {"name": "Pondu", "desc": "🇨🇩 Congo — Feuilles de manioc"},
+                {"name": "Thiéboudienne", "desc": "🇸🇳 Sénégal — Riz au poisson UNESCO"}
+            ],
+            "highlights": ["5 pays en 1 box", "Prix découverte -50%", "Parfait pour débuter", "Portions dégustation"],
+            "nutritional_info": {"proteins": 32, "carbs": 45, "fats": 14, "fiber": 12},
+            "is_vegetarian": False,
+            "is_vegan": False,
+            "is_gluten_free": True
+        },
         # === GABON ===
         {
             "id": "box-nyembwe",
