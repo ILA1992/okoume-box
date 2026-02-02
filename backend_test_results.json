@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-02T21:06:51.604020",
-  "total_tests": 24,
-  "passed_tests": 24,
-  "success_rate": 100.0,
+  "timestamp": "2026-02-02T21:37:02.109354",
+  "total_tests": 23,
+  "passed_tests": 22,
+  "success_rate": 95.65217391304348,
   "results": [
     {
       "test": "Seed Data",
@@ -51,16 +51,11 @@
     },
     {
       "test": "Get All Recipes",
-      "success": true,
-      "details": "Status: 200"
+      "success": false,
+      "details": "Status: 520, Response: Internal Server Error"
     },
     {
       "test": "Get Recipes by Region",
-      "success": true,
-      "details": "Status: 200"
-    },
-    {
-      "test": "Get Recipe Detail",
       "success": true,
       "details": "Status: 200"
     },
