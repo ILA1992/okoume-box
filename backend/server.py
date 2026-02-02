@@ -125,6 +125,38 @@ class OrderCreate(BaseModel):
     delivery_date: str
     phone: str
 
+# === SUBSCRIPTION MODELS ===
+class SubscriptionPlan(BaseModel):
+    id: str
+    name: str
+    description: str
+    price_monthly: float
+    price_quarterly: float  # -10%
+    price_yearly: float     # -20%
+    boxes_per_month: int
+    features: List[str]
+    is_popular: bool = False
+
+class SubscriptionCreate(BaseModel):
+    plan_id: str
+    billing_cycle: str  # monthly, quarterly, yearly
+    delivery_address: str
+    phone: str
+    preferred_countries: List[str] = []  # préférences de pays
+
+class SubscriptionResponse(BaseModel):
+    id: str
+    user_id: str
+    plan_id: str
+    plan_name: str
+    billing_cycle: str
+    price: float
+    status: str  # active, paused, cancelled
+    delivery_address: str
+    preferred_countries: List[str]
+    next_delivery_date: str
+    created_at: str
+
 class OrderResponse(BaseModel):
     id: str
     user_id: str
