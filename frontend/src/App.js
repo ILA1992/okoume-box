@@ -10,18 +10,24 @@ import CataloguePage from "@/pages/CataloguePage";
 import BoxDetailPage from "@/pages/BoxDetailPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogArticlePage from "@/pages/BlogArticlePage";
+import AfricanDishesPage from "@/pages/AfricanDishesPage";
+import AfricanDishDetailPage from "@/pages/AfricanDishDetailPage";
 import CartPage from "@/pages/CartPage";
 import AuthPage from "@/pages/AuthPage";
 import ProfilePage from "@/pages/ProfilePage";
 import SubscriptionPage from "@/pages/SubscriptionPage";
+import AdminPage from "@/pages/AdminPage";
+import CheckoutPage from "@/pages/CheckoutPage";
 
 // Components
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
 export const API = `${BACKEND_URL}/api`;
+
+const STORAGE_KEY = "okoume_box_token";
 
 // Auth Context
 export const AuthContext = createContext(null);
@@ -36,7 +42,9 @@ export const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("afrobox_token"));
+  const [token, setToken] = useState(
+    localStorage.getItem(STORAGE_KEY) || localStorage.getItem("okoumebox_token")
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -48,7 +56,7 @@ const AuthProvider = ({ children }) => {
           });
           setUser(response.data);
         } catch (error) {
-          localStorage.removeItem("afrobox_token");
+          localStorage.removeItem("okoumebox_token");
           setToken(null);
         }
       }
@@ -60,7 +68,8 @@ const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     const response = await axios.post(`${API}/auth/login`, { email, password });
     const { access_token, user: userData } = response.data;
-    localStorage.setItem("afrobox_token", access_token);
+    localStorage.setItem(STORAGE_KEY, access_token);
+    localStorage.removeItem("okoumebox_token");
     setToken(access_token);
     setUser(userData);
     return userData;
@@ -69,14 +78,16 @@ const AuthProvider = ({ children }) => {
   const register = async (email, password, name) => {
     const response = await axios.post(`${API}/auth/register`, { email, password, name });
     const { access_token, user: userData } = response.data;
-    localStorage.setItem("afrobox_token", access_token);
+    localStorage.setItem(STORAGE_KEY, access_token);
+    localStorage.removeItem("okoumebox_token");
     setToken(access_token);
     setUser(userData);
     return userData;
   };
 
   const logout = () => {
-    localStorage.removeItem("afrobox_token");
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem("okoumebox_token");
     setToken(null);
     setUser(null);
   };
@@ -94,7 +105,7 @@ const ProtectedRoute = ({ children }) => {
   
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-amber-50">
+      <div className="min-h-screen flex items-center justify-center bg-orange-50">
         <div className="animate-spin w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full"></div>
       </div>
     );
@@ -123,7 +134,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col bg-amber-50">
+        <div className="min-h-screen flex flex-col bg-orange-50">
           <Navbar />
           <main className="flex-1">
             <Routes>
@@ -132,6 +143,8 @@ function App() {
               <Route path="/box/:id" element={<BoxDetailPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:id" element={<BlogArticlePage />} />
+              <Route path="/plats-africains" element={<AfricanDishesPage />} />
+              <Route path="/plats-africains/:countryCode/:dishId" element={<AfricanDishDetailPage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route path="/abonnement" element={<SubscriptionPage />} />
               <Route path="/cart" element={
@@ -142,6 +155,16 @@ function App() {
               <Route path="/profile" element={
                 <ProtectedRoute>
                   <ProfilePage />
+                </ProtectedRoute>
+              } />
+              <Route path="/checkout" element={
+                <ProtectedRoute>
+                  <CheckoutPage />
+                </ProtectedRoute>
+              } />
+              <Route path="/admin" element={
+                <ProtectedRoute>
+                  <AdminPage />
                 </ProtectedRoute>
               } />
             </Routes>

@@ -20,15 +20,15 @@ const ProfilePage = () => {
       .finally(() => setLoading(false));
   }, [token]);
 
-  const getStatusColor = (s) => s === "pending" ? "bg-amber-100 text-amber-700" : s === "confirmed" ? "bg-blue-100 text-blue-700" : "bg-green-100 text-green-700";
+  const getStatusColor = (s) => s === "pending" ? "bg-orange-100 text-orange-700" : s === "confirmed" ? "bg-blue-100 text-blue-700" : "bg-green-100 text-green-700";
   const getStatusLabel = (s) => s === "pending" ? "En attente" : s === "confirmed" ? "Confirmée" : "Livrée";
 
   return (
-    <div className="min-h-screen bg-amber-50" data-testid="profile-page">
+    <div className="min-h-screen bg-orange-50" data-testid="profile-page">
       <div className="bg-white border-b border-stone-200">
         <div className="container-custom py-12">
           <div className="flex items-center gap-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
               <span className="text-3xl font-bold text-white">{user?.name?.charAt(0)?.toUpperCase() || "U"}</span>
             </div>
             <div>
@@ -42,8 +42,8 @@ const ProfilePage = () => {
       <div className="container-custom py-12">
         <Tabs defaultValue="orders" className="w-full">
           <TabsList className="bg-white border border-stone-200 p-1 rounded-full mb-8">
-            <TabsTrigger value="orders" className="rounded-full data-[state=active]:bg-amber-600 data-[state=active]:text-white"><Package className="w-4 h-4 mr-2" />Mes commandes</TabsTrigger>
-            <TabsTrigger value="profile" className="rounded-full data-[state=active]:bg-amber-600 data-[state=active]:text-white"><User className="w-4 h-4 mr-2" />Mon profil</TabsTrigger>
+            <TabsTrigger value="orders" className="rounded-full data-[state=active]:bg-orange-600 data-[state=active]:text-white"><Package className="w-4 h-4 mr-2" />Mes commandes</TabsTrigger>
+            <TabsTrigger value="profile" className="rounded-full data-[state=active]:bg-orange-600 data-[state=active]:text-white"><User className="w-4 h-4 mr-2" />Mon profil</TabsTrigger>
           </TabsList>
 
           <TabsContent value="orders">
@@ -52,9 +52,9 @@ const ProfilePage = () => {
             ) : orders.length === 0 ? (
               <Card className="border-0 shadow-sm">
                 <CardContent className="py-16 text-center">
-                  <ShoppingBag className="w-10 h-10 text-amber-600 mx-auto mb-4" />
+                  <ShoppingBag className="w-10 h-10 text-orange-600 mx-auto mb-4" />
                   <h2 className="font-heading text-xl font-semibold mb-2">Aucune commande</h2>
-                  <Link to="/catalogue"><Button className="bg-amber-600 hover:bg-amber-700 rounded-full px-8">Découvrir nos box</Button></Link>
+                  <Link to="/catalogue"><Button className="bg-orange-600 hover:bg-orange-700 rounded-full px-8">Découvrir nos box</Button></Link>
                 </CardContent>
               </Card>
             ) : (
@@ -64,7 +64,7 @@ const ProfilePage = () => {
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div className="flex items-center gap-4">
-                          <Package className="w-6 h-6 text-amber-600" />
+                          <Package className="w-6 h-6 text-orange-600" />
                           <div>
                             <p className="text-sm text-stone-500">Commande #{order.id.slice(0, 8)}</p>
                             <p className="font-heading text-lg font-semibold">{order.total.toFixed(2)}€</p>
@@ -73,9 +73,9 @@ const ProfilePage = () => {
                         <Badge className={`${getStatusColor(order.status)} border-0`}>{getStatusLabel(order.status)}</Badge>
                       </div>
                       <div className="grid md:grid-cols-3 gap-4 mb-4">
-                        <div className="flex items-center gap-2 text-sm"><Calendar className="w-4 h-4 text-amber-500" />{order.delivery_date}</div>
-                        <div className="flex items-center gap-2 text-sm"><MapPin className="w-4 h-4 text-amber-500" />{order.delivery_address}</div>
-                        <div className="flex items-center gap-2 text-sm"><Clock className="w-4 h-4 text-amber-500" />{new Date(order.created_at).toLocaleDateString("fr-FR")}</div>
+                        <div className="flex items-center gap-2 text-sm"><Calendar className="w-4 h-4 text-orange-500" />{order.delivery_date}</div>
+                        <div className="flex items-center gap-2 text-sm"><MapPin className="w-4 h-4 text-orange-500" />{order.delivery_address}</div>
+                        <div className="flex items-center gap-2 text-sm"><Clock className="w-4 h-4 text-orange-500" />{new Date(order.created_at).toLocaleDateString("fr-FR")}</div>
                       </div>
                       <div className="flex gap-2 flex-wrap">
                         {order.items.map(item => (
@@ -95,18 +95,18 @@ const ProfilePage = () => {
           <TabsContent value="profile">
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="border-0 shadow-sm">
-                <CardHeader><CardTitle className="font-heading"><User className="w-5 h-5 inline mr-2 text-amber-600" />Informations</CardTitle></CardHeader>
+                <CardHeader><CardTitle className="font-heading"><User className="w-5 h-5 inline mr-2 text-orange-600" />Informations</CardTitle></CardHeader>
                 <CardContent className="space-y-4">
                   <div><p className="text-sm text-stone-500">Nom</p><p className="font-medium">{user?.name}</p></div>
                   <div><p className="text-sm text-stone-500">Email</p><p className="font-medium">{user?.email}</p></div>
                 </CardContent>
               </Card>
-              <Card className="border-0 shadow-sm bg-gradient-to-br from-amber-50 to-white">
+              <Card className="border-0 shadow-sm bg-gradient-to-br from-orange-50 to-white">
                 <CardContent className="p-6">
-                  <ChefHat className="w-8 h-8 text-amber-600 mb-4" />
+                  <ChefHat className="w-8 h-8 text-orange-600 mb-4" />
                   <h3 className="font-heading text-xl font-semibold mb-2">Besoin d'aide ?</h3>
                   <p className="text-stone-600 mb-4">Notre assistant IA peut personnaliser vos box.</p>
-                  <Button variant="outline" className="border-amber-600 text-amber-600" onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()}>
+                  <Button variant="outline" className="border-orange-600 text-orange-600" onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()}>
                     Parler à l'assistant<ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>

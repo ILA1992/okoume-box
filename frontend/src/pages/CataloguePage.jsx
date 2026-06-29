@@ -1,19 +1,34 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API } from "@/App";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
-import { Filter, Sparkles, Clock, Users, Flame, ArrowRight, Leaf, Wheat } from "lucide-react";
+import { BoxCard } from "@/components/BoxCard";
+import { Sparkles, Clock, Users, Flame, ArrowRight, Leaf, Wheat, Search, X, SlidersHorizontal } from "lucide-react";
+
+const CATEGORIES = [
+  { value: "all", label: "Toutes", emoji: "🍽️" },
+  { value: "signature", label: "Signature", emoji: "⭐" },
+  { value: "decouverte", label: "Découverte", emoji: "🌱" },
+  { value: "multi-pays", label: "Multi-Pays", emoji: "🌍" },
+];
 
 const CataloguePage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [boxes, setBoxes] = useState([]);
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [countryFilter, setCountryFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [search, setSearch] = useState("");
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+  // Read country param from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const c = params.get("country");
+    if (c) setCountryFilter(c);
+  }, [location.search]);
 
   useEffect(() => {
     axios.get(`${API}/countries`).then(res => setCountries(res.data)).catch(console.error);
@@ -30,60 +45,145 @@ const CataloguePage = () => {
       .finally(() => setLoading(false));
   }, [countryFilter, categoryFilter]);
 
-  const categories = [
-    { value: "all", label: "Toutes les box" },
-    { value: "signature", label: "Box Signature" },
-    { value: "decouverte", label: "Box Découverte" },
-    { value: "multi-pays", label: "Box Multi-Pays" }
-  ];
+  const handleReset = () => {
+    setCountryFilter("all");
+    setCategoryFilter("all");
+    setSearch("");
+    navigate("/catalogue");
+  };
+
+  const filteredBoxes = boxes.filter(box => {
+    if (!search.trim()) return true;
+    const q = search.toLowerCase();
+    return (
+      box.name.toLowerCase().includes(q) ||
+      box.description.toLowerCase().includes(q) ||
+      (box.dishes || []).some(d => d.name.toLowerCase().includes(q))
+    );
+  });
+
+  const hasActiveFilters = countryFilter !== "all" || categoryFilter !== "all" || search.trim();
+  const selectedCountry = countries.find(c => c.id === countryFilter);
 
   return (
-    <div className="min-h-screen bg-amber-50" data-testid="catalogue-page">
+    <div className="min-h-screen bg-orange-50" data-testid="catalogue-page">
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-500 text-white">
-        <div className="container-custom py-16">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Nos Box Téré</h1>
-          <p className="text-lg text-amber-100 max-w-2xl">
-            Plats authentiques d'Afrique Centrale & de l'Ouest. Gabon, Cameroun, Côte d'Ivoire, Congo et Sénégal.
-          </p>
+      <div className="bg-stone-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="adinkra-cat" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="22" fill="none" stroke="#d97706" strokeWidth="1.5" />
+                <circle cx="30" cy="30" r="12" fill="none" stroke="#d97706" strokeWidth="1" />
+                <line x1="8" y1="30" x2="52" y2="30" stroke="#d97706" strokeWidth="1" />
+                <line x1="30" y1="8" x2="30" y2="52" stroke="#d97706" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#adinkra-cat)" />
+          </svg>
+        </div>
+        <div className="container-custom py-14 relative z-10">
+          <div className="flex items-start justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                {selectedCountry && (
+                  <span className="text-2xl">{selectedCountry.flag}</span>
+                )}
+                <h1 className="font-heading text-4xl md:text-5xl font-bold">
+                  {selectedCountry ? `Box ${selectedCountry.name}` : "Nos Okoumé Box"}
+                </h1>
+              </div>
+              <p className="text-stone-400 max-w-2xl">
+                {selectedCountry
+                  ? `Découvrez les plats authentiques du ${selectedCountry.name}.`
+                  : "Plats authentiques d'Afrique Centrale & de l'Ouest — Gabon, Cameroun, Côte d'Ivoire, Congo et Sénégal."}
+              </p>
+            </div>
+            <Button
+              onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()}
+              className="hidden md:flex bg-orange-600 hover:bg-orange-500 text-white rounded-full px-5 shadow-lg"
+              data-testid="personalize-btn"
+            >
+              <Sparkles className="w-4 h-4 mr-2" />IA Personnalisée
+            </Button>
+          </div>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="bg-white border-b border-stone-200 sticky top-16 md:top-20 z-40">
-        <div className="container-custom py-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-4 flex-wrap">
-              <div className="flex items-center gap-2 text-stone-600">
-                <Filter className="w-4 h-4" />
-                <span className="text-sm font-medium">Filtrer:</span>
-              </div>
-              <Select value={countryFilter} onValueChange={setCountryFilter}>
-                <SelectTrigger className="w-[180px] border-stone-200" data-testid="country-filter">
-                  <SelectValue placeholder="Pays" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Tous les pays</SelectItem>
-                  {countries.map(c => (
-                    <SelectItem key={c.id} value={c.id}>{c.flag} {c.name}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger className="w-[160px] border-stone-200" data-testid="category-filter">
-                  <SelectValue placeholder="Catégorie" />
-                </SelectTrigger>
-                <SelectContent>
-                  {categories.map(cat => (
-                    <SelectItem key={cat.value} value={cat.value}>{cat.label}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+      <div className="bg-white border-b border-stone-200 sticky top-16 md:top-20 z-40 shadow-sm">
+        <div className="container-custom py-3">
+          {/* Country pills */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
+            <button
+              onClick={() => { setCountryFilter("all"); navigate("/catalogue"); }}
+              className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all border
+                ${countryFilter === "all"
+                  ? "bg-stone-900 text-white border-stone-900"
+                  : "bg-white text-stone-600 border-stone-200 hover:border-stone-400"}`}
+              data-testid="country-filter-all"
+            >
+              🌍 Tous les pays
+            </button>
+            {countries.filter(c => c.id !== "multi").map(c => (
+              <button
+                key={c.id}
+                onClick={() => { setCountryFilter(c.id); navigate(`/catalogue?country=${c.id}`); }}
+                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all border
+                  ${countryFilter === c.id
+                    ? "bg-orange-600 text-white border-orange-600 shadow-sm"
+                    : "bg-white text-stone-600 border-stone-200 hover:border-orange-400 hover:bg-orange-50"}`}
+                data-testid={`country-filter-${c.id}`}
+              >
+                {c.flag} {c.name}
+              </button>
+            ))}
+          </div>
+
+          {/* Second row: category + search + reset */}
+          <div className="flex items-center gap-3 mt-2 flex-wrap">
+            {/* Category pills */}
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {CATEGORIES.map(cat => (
+                <button
+                  key={cat.value}
+                  onClick={() => setCategoryFilter(cat.value)}
+                  className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-all border
+                    ${categoryFilter === cat.value
+                      ? "bg-orange-100 text-orange-700 border-amber-300"
+                      : "bg-transparent text-stone-500 border-stone-200 hover:border-stone-300"}`}
+                  data-testid={`category-filter-${cat.value}`}
+                >
+                  <span>{cat.emoji}</span> {cat.label}
+                </button>
+              ))}
             </div>
-            <Button variant="outline" className="border-amber-600 text-amber-600 hover:bg-amber-50"
-              onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()} data-testid="personalize-btn">
-              <Sparkles className="w-4 h-4 mr-2" />Personnaliser avec IA
-            </Button>
+
+            {/* Search */}
+            <div className="relative ml-auto">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+              <input
+                type="text"
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                placeholder="Rechercher un plat..."
+                className="pl-9 pr-4 py-1.5 rounded-full border border-stone-200 text-sm focus:outline-none focus:border-orange-400 bg-orange-50/50 w-48"
+              />
+              {search && (
+                <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2">
+                  <X className="w-3 h-3 text-stone-400" />
+                </button>
+              )}
+            </div>
+
+            {hasActiveFilters && (
+              <button
+                onClick={handleReset}
+                className="flex items-center gap-1 text-xs text-stone-500 hover:text-orange-600 underline underline-offset-2"
+              >
+                <X className="w-3 h-3" /> Réinitialiser
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -92,74 +192,39 @@ const CataloguePage = () => {
       <div className="container-custom py-12">
         {loading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1,2,3,4,5,6].map(i => <div key={i} className="bg-white rounded-2xl h-[450px] skeleton" />)}
+            {[1,2,3,4,5,6].map(i => <div key={i} className="bg-white rounded-2xl h-[480px] skeleton" />)}
           </div>
-        ) : boxes.length === 0 ? (
+        ) : filteredBoxes.length === 0 ? (
           <div className="text-center py-20">
+            <div className="text-5xl mb-4">🍽️</div>
             <h3 className="font-heading text-xl font-semibold mb-2">Aucune box trouvée</h3>
-            <Button onClick={() => { setCountryFilter("all"); setCategoryFilter("all"); }} className="bg-amber-600 hover:bg-amber-700">
-              Réinitialiser
+            <p className="text-stone-500 mb-6 text-sm">Essayez d'autres filtres ou réinitialisez la recherche.</p>
+            <Button onClick={handleReset} className="bg-orange-600 hover:bg-orange-700 rounded-full px-8">
+              Voir toutes les box
             </Button>
           </div>
         ) : (
           <>
-            <p className="text-sm text-stone-500 mb-6">{boxes.length} box{boxes.length > 1 ? "s" : ""} disponible{boxes.length > 1 ? "s" : ""}</p>
+            <div className="flex items-center justify-between mb-6">
+              <p className="text-sm text-stone-500">
+                <span className="font-semibold text-stone-800">{filteredBoxes.length}</span> box{filteredBoxes.length > 1 ? "s" : ""} disponible{filteredBoxes.length > 1 ? "s" : ""}
+                {countryFilter !== "all" && selectedCountry && (
+                  <span className="ml-1">· {selectedCountry.flag} {selectedCountry.name}</span>
+                )}
+              </p>
+              <Button
+                onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()}
+                variant="outline"
+                size="sm"
+                className="md:hidden border-orange-600 text-orange-600 hover:bg-orange-50 rounded-full"
+              >
+                <Sparkles className="w-3 h-3 mr-1.5" />IA
+              </Button>
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {boxes.map((box, idx) => (
-                <Card key={box.id} className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border-0 animate-fade-in" style={{ animationDelay: `${idx * 50}ms` }} data-testid={`box-card-${box.id}`}>
-                  {/* Image */}
-                  <div className="relative h-52 overflow-hidden">
-                    <img src={box.image_url} alt={box.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    {/* Country Badge */}
-                    <Badge className="absolute top-3 left-3 bg-white/95 text-stone-800 border-0 font-semibold text-sm">
-                      {box.country_flag} {countries.find(c => c.id === box.country)?.name || box.country}
-                    </Badge>
-                    {/* Diet Badges */}
-                    <div className="absolute top-3 right-3 flex gap-1">
-                      {box.is_vegetarian && <div className="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center" title="Végétarien"><Leaf className="w-4 h-4 text-white" /></div>}
-                      {box.is_gluten_free && <div className="w-7 h-7 rounded-full bg-amber-500 flex items-center justify-center" title="Sans gluten"><Wheat className="w-4 h-4 text-white" /></div>}
-                    </div>
-                    {/* Price */}
-                    <div className="absolute bottom-3 right-3 bg-amber-600 text-white rounded-full px-4 py-1.5">
-                      <span className="font-heading text-lg font-bold">{box.price.toFixed(0)}€</span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <CardContent className="p-5">
-                    <h3 className="font-heading text-lg font-bold text-stone-900 mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">{box.name}</h3>
-                    <p className="text-stone-500 text-sm mb-4 line-clamp-2">{box.description}</p>
-
-                    {/* Dishes Preview */}
-                    {box.dishes && box.dishes.length > 0 && (
-                      <div className="mb-4">
-                        <p className="text-xs font-semibold text-amber-600 uppercase tracking-wide mb-2">{box.dishes.length} plats inclus</p>
-                        <div className="flex flex-wrap gap-1">
-                          {box.dishes.slice(0, 3).map((dish, i) => (
-                            <span key={i} className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded-full">{dish.name}</span>
-                          ))}
-                          {box.dishes.length > 3 && <span className="text-xs bg-stone-100 text-stone-600 px-2 py-1 rounded-full">+{box.dishes.length - 3}</span>}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Stats */}
-                    <div className="flex items-center gap-4 mb-4 text-sm text-stone-600">
-                      <div className="flex items-center gap-1"><Clock className="w-4 h-4 text-amber-500" /><span>{box.prep_time}min</span></div>
-                      <div className="flex items-center gap-1"><Users className="w-4 h-4 text-amber-500" /><span>{box.serves} pers.</span></div>
-                      <div className="flex items-center gap-1"><Flame className="w-4 h-4 text-amber-500" /><span>{box.calories}kcal</span></div>
-                    </div>
-
-                    {/* CTA */}
-                    <Link to={`/box/${box.id}`}>
-                      <Button variant="ghost" className="w-full justify-between text-amber-600 hover:text-amber-700 hover:bg-amber-50 group/btn" data-testid={`view-box-btn-${box.id}`}>
-                        Voir la box
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+              {filteredBoxes.map((box) => (
+                <BoxCard key={box.id} box={box} />
               ))}
             </div>
           </>

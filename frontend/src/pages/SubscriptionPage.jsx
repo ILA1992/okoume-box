@@ -122,18 +122,18 @@ const SubscriptionPage = () => {
     return Math.round((plan.price_monthly * 12 - plan.price_yearly) * 100) / 100;
   };
 
-  if (loading) return <div className="min-h-screen bg-amber-50 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full" /></div>;
+  if (loading) return <div className="min-h-screen bg-orange-50 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-orange-600 border-t-transparent rounded-full" /></div>;
 
   return (
-    <div className="min-h-screen bg-amber-50" data-testid="subscription-page">
+    <div className="min-h-screen bg-orange-50" data-testid="subscription-page">
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-500 text-white">
+      <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white">
         <div className="container-custom py-16 text-center">
           <Badge className="bg-white/20 text-white border-0 mb-4">
             <Sparkles className="w-4 h-4 mr-1" /> Économisez jusqu'à 25%
           </Badge>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Abonnement Box Téré</h1>
-          <p className="text-lg text-amber-100 max-w-2xl mx-auto">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Abonnement Okoumé Box</h1>
+          <p className="text-lg text-orange-100 max-w-2xl mx-auto">
             Recevez chaque mois vos box de plats africains authentiques. Plus vous vous abonnez longtemps, plus vous économisez !
           </p>
         </div>
@@ -156,7 +156,7 @@ const SubscriptionPage = () => {
                     </CardDescription>
                   </div>
                 </div>
-                <Badge className={mySubscription.status === "active" ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"}>
+                <Badge className={mySubscription.status === "active" ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700"}>
                   {mySubscription.status === "active" ? "Actif" : "En pause"}
                 </Badge>
               </div>
@@ -169,7 +169,7 @@ const SubscriptionPage = () => {
               </div>
               <div className="flex gap-3 mt-6">
                 {mySubscription.status === "active" ? (
-                  <Button variant="outline" onClick={handlePause} className="border-amber-600 text-amber-600">
+                  <Button variant="outline" onClick={handlePause} className="border-orange-600 text-orange-600">
                     <Pause className="w-4 h-4 mr-2" />Mettre en pause
                   </Button>
                 ) : (
@@ -189,13 +189,13 @@ const SubscriptionPage = () => {
         {!mySubscription && (
           <div className="flex justify-center mb-8">
             <div className="bg-white rounded-full p-1 shadow-sm border border-stone-200 inline-flex">
-              <button onClick={() => setBillingCycle("monthly")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === "monthly" ? "bg-amber-600 text-white" : "text-stone-600 hover:text-amber-600"}`}>
+              <button onClick={() => setBillingCycle("monthly")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === "monthly" ? "bg-orange-600 text-white" : "text-stone-600 hover:text-orange-600"}`}>
                 Mensuel
               </button>
-              <button onClick={() => setBillingCycle("quarterly")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === "quarterly" ? "bg-amber-600 text-white" : "text-stone-600 hover:text-amber-600"}`}>
+              <button onClick={() => setBillingCycle("quarterly")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === "quarterly" ? "bg-orange-600 text-white" : "text-stone-600 hover:text-orange-600"}`}>
                 Trimestriel <span className="text-xs ml-1">-10%</span>
               </button>
-              <button onClick={() => setBillingCycle("yearly")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === "yearly" ? "bg-amber-600 text-white" : "text-stone-600 hover:text-amber-600"}`}>
+              <button onClick={() => setBillingCycle("yearly")} className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === "yearly" ? "bg-orange-600 text-white" : "text-stone-600 hover:text-orange-600"}`}>
                 Annuel <span className="text-xs ml-1">-20%</span>
               </button>
             </div>
@@ -206,24 +206,24 @@ const SubscriptionPage = () => {
         {!mySubscription && (
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {plans.map((plan) => (
-              <Card key={plan.id} className={`relative border-0 shadow-lg overflow-hidden transition-transform hover:scale-105 ${plan.is_popular ? "ring-2 ring-amber-500" : ""}`} data-testid={`plan-${plan.id}`}>
+              <Card key={plan.id} className={`relative border-0 shadow-lg overflow-hidden transition-transform hover:scale-105 ${plan.is_popular ? "ring-2 ring-orange-500" : ""}`} data-testid={`plan-${plan.id}`}>
                 {plan.is_popular && (
-                  <div className="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                     POPULAIRE
                   </div>
                 )}
                 <CardHeader className="text-center pb-2">
-                  <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-4">
-                    {plan.id === "decouverte" && <Gift className="w-8 h-8 text-amber-600" />}
-                    {plan.id === "gourmet" && <ChefHat className="w-8 h-8 text-amber-600" />}
-                    {plan.id === "famille" && <Crown className="w-8 h-8 text-amber-600" />}
+                  <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
+                    {plan.id === "decouverte" && <Gift className="w-8 h-8 text-orange-600" />}
+                    {plan.id === "gourmet" && <ChefHat className="w-8 h-8 text-orange-600" />}
+                    {plan.id === "famille" && <Crown className="w-8 h-8 text-orange-600" />}
                   </div>
                   <CardTitle className="font-heading text-2xl">{plan.name}</CardTitle>
                   <CardDescription className="text-sm">{plan.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
                   <div className="mb-6">
-                    <span className="font-heading text-4xl font-bold text-amber-600">{getPrice(plan).toFixed(0)}€</span>
+                    <span className="font-heading text-4xl font-bold text-orange-600">{getPrice(plan).toFixed(0)}€</span>
                     <span className="text-stone-500">/{billingCycle === "monthly" ? "mois" : billingCycle === "quarterly" ? "trim." : "an"}</span>
                     {getSavings(plan) > 0 && (
                       <p className="text-green-600 text-sm mt-1">Économisez {getSavings(plan).toFixed(0)}€</p>
@@ -237,7 +237,7 @@ const SubscriptionPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button onClick={() => handleSelectPlan(plan)} className={`w-full rounded-full py-6 ${plan.is_popular ? "bg-amber-600 hover:bg-amber-700" : "bg-stone-800 hover:bg-stone-900"}`} data-testid={`select-plan-${plan.id}`}>
+                  <Button onClick={() => handleSelectPlan(plan)} className={`w-full rounded-full py-6 ${plan.is_popular ? "bg-orange-600 hover:bg-orange-700" : "bg-stone-800 hover:bg-stone-900"}`} data-testid={`select-plan-${plan.id}`}>
                     Choisir ce plan
                   </Button>
                 </CardContent>
@@ -255,8 +255,8 @@ const SubscriptionPage = () => {
             { icon: X, title: "Sans engagement", desc: "Annulez à tout moment" }
           ].map((f, i) => (
             <div key={i} className="text-center">
-              <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-3">
-                <f.icon className="w-6 h-6 text-amber-600" />
+              <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
+                <f.icon className="w-6 h-6 text-orange-600" />
               </div>
               <h4 className="font-semibold text-stone-900">{f.title}</h4>
               <p className="text-sm text-stone-500">{f.desc}</p>
@@ -276,11 +276,11 @@ const SubscriptionPage = () => {
           </DialogHeader>
           <form onSubmit={handleSubscribe} className="space-y-4">
             <div className="space-y-2">
-              <Label className="flex items-center gap-2"><MapPin className="w-4 h-4 text-amber-600" />Adresse de livraison</Label>
+              <Label className="flex items-center gap-2"><MapPin className="w-4 h-4 text-orange-600" />Adresse de livraison</Label>
               <Input value={deliveryAddress} onChange={(e) => setDeliveryAddress(e.target.value)} placeholder="123 Rue des Saveurs, Paris" required data-testid="sub-address" />
             </div>
             <div className="space-y-2">
-              <Label className="flex items-center gap-2"><Phone className="w-4 h-4 text-amber-600" />Téléphone</Label>
+              <Label className="flex items-center gap-2"><Phone className="w-4 h-4 text-orange-600" />Téléphone</Label>
               <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+33 6 12 34 56 78" required data-testid="sub-phone" />
             </div>
             <div className="space-y-2">
@@ -297,7 +297,7 @@ const SubscriptionPage = () => {
                 ))}
               </div>
             </div>
-            <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700 rounded-full py-6" disabled={subscribing} data-testid="confirm-subscription">
+            <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 rounded-full py-6" disabled={subscribing} data-testid="confirm-subscription">
               {subscribing ? <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" /> : <Check className="w-5 h-5 mr-2" />}
               Confirmer l'abonnement
             </Button>

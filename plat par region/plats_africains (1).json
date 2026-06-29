@@ -1,0 +1,1104 @@
+{
+  "title": "Gastronomie africaine — Répertoire complet des plats traditionnels",
+  "description": "Base de données de plats traditionnels africains organisée par région et par pays. Source : recherches documentaires juin 2026.",
+  "total_plats": 87,
+  "regions": [
+    {
+      "region": "Afrique de l'Ouest",
+      "pays": [
+        {
+          "pays": "Sénégal",
+          "code": "SN",
+          "plats": [
+            {
+              "nom": "Thiéboudienne",
+              "nom_local": "Ceebu jen",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["riz", "poisson", "tomate", "manioc", "aubergine", "carotte", "citrouille", "huile d'arachide", "yet (coquillage séché)"],
+              "description": "Plat national sénégalais. Poisson farci aux herbes cuit dans une sauce tomate épicée avec des légumes entiers et du riz.",
+              "regime": "Pescatarien",
+              "patrimoine": "UNESCO"
+            },
+            {
+              "nom": "Poulet Yassa",
+              "nom_local": "Yassa ginnar",
+              "type": "Plat principal",
+              "statut": "Emblématique",
+              "ingredients_principaux": ["poulet", "citron", "oignon", "ail", "moutarde", "riz"],
+              "description": "Poulet mariné au citron, ail, oignons et moutarde, grillé puis mijoté dans la marinade adoucie. Originaire de Casamance.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Mafé",
+              "nom_local": "Maafé",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["pâte d'arachide", "bœuf ou poulet", "tomate", "oignon", "légumes"],
+              "description": "Ragoût onctueux à la sauce arachide avec viande ou poisson. Partagé avec le Mali et la Guinée.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Thiébou yapp",
+              "nom_local": "Ceebu yapp",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["riz", "bœuf", "mouton", "tomate", "légumes"],
+              "description": "Variante du thiéboudienne à la viande rouge (bœuf ou mouton) au lieu du poisson.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Akara",
+              "nom_local": "Akara",
+              "type": "Snack / Street food",
+              "statut": "Populaire",
+              "ingredients_principaux": ["haricots cornilles", "piment", "oignon"],
+              "description": "Beignets salés frits à base de haricots cornilles et piments. Retrouvé aussi en Haïti et au Brésil.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Domoda",
+              "nom_local": "Domoda",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["pâte d'arachide", "viande", "légumes", "tomate"],
+              "description": "Ragoût de viande à la pâte de cacahuète avec légumes. Partagé avec la Gambie.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Benachin",
+              "nom_local": "Benachin",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["riz", "tomate", "viande ou poisson", "légumes"],
+              "description": "Riz en sauce tomate avec viande ou poisson, cuit en une seule marmite.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Nigeria",
+          "code": "NG",
+          "plats": [
+            {
+              "nom": "Jollof Rice",
+              "nom_local": "Jollof Rice",
+              "type": "Plat principal",
+              "statut": "Plat national / Emblématique",
+              "ingredients_principaux": ["riz long grain", "tomate", "poivron rouge", "oignon", "bouillon", "épices"],
+              "description": "Riz cuit dans une sauce tomate épicée. Obsession nationale et sujet de rivalité avec le Ghana. Ne jamais remuer pendant la cuisson.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Egusi Soup",
+              "nom_local": "Egusi",
+              "type": "Soupe",
+              "statut": "Populaire",
+              "ingredients_principaux": ["graines de melon", "feuilles d'épinards", "poisson fumé", "huile de palme", "viande"],
+              "description": "Soupe épaisse aux graines de melon (egusi) avec feuilles vertes et protéines variées.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Efo Riro",
+              "nom_local": "Efo Riro",
+              "type": "Soupe",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["épinards ou amarante", "tomate", "oignon", "poisson fumé", "crevettes"],
+              "description": "Soupe épaisse aux feuilles vertes (épinards ou feuilles d'amarante) avec poisson fumé ou séché.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Suya",
+              "nom_local": "Suya",
+              "type": "Street food / Grill",
+              "statut": "Populaire",
+              "ingredients_principaux": ["bœuf ou poulet", "paprika", "gingembre", "cayenne", "arachides moulues"],
+              "description": "Brochettes de viande grillées assaisonnées d'un mélange d'épices. Populaire aussi au Cameroun et au Ghana.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Fufu",
+              "nom_local": "Fufu",
+              "type": "Accompagnement",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["manioc", "igname", "plantain"],
+              "description": "Manioc, igname ou plantain pilés longuement pour obtenir une pâte homogène et élastique. Roulé en boules à tremper dans des sauces.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Puff-Puff",
+              "nom_local": "Puff-Puff",
+              "type": "Snack / Dessert",
+              "statut": "Street food populaire",
+              "ingredients_principaux": ["farine", "levure", "sucre", "huile"],
+              "description": "Beignets moelleux et sucrés frits. Appelés Mikates au Congo, Bofrot au Ghana, Kala au Liberia.",
+              "regime": "Végétarien"
+            },
+            {
+              "nom": "Banga Soup",
+              "nom_local": "Ofe Akwu",
+              "type": "Soupe",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["huile de palme", "poisson ou viande", "épices locales"],
+              "description": "Soupe riche à base d'huile de palme avec poisson ou viande, très parfumée.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Ghana",
+          "code": "GH",
+          "plats": [
+            {
+              "nom": "Jollof Rice ghanéen",
+              "nom_local": "Jollof Rice",
+              "type": "Plat principal",
+              "statut": "Emblématique",
+              "ingredients_principaux": ["riz", "tomate", "épices", "bouillon de poulet"],
+              "description": "Version ghanéenne du riz jolof, sujet de fierté nationale face au Nigeria. Débat culinaire légendaire.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Waakye",
+              "nom_local": "Waakye",
+              "type": "Plat principal",
+              "statut": "Street food populaire",
+              "ingredients_principaux": ["riz", "haricots rouges", "feuilles de sorgho"],
+              "description": "Riz et haricots rouges cuits ensemble avec feuilles de sorgho (qui donnent la couleur). Plat de rue très populaire.",
+              "regime": "Végétarien"
+            },
+            {
+              "nom": "Kelewele",
+              "nom_local": "Kelewele",
+              "type": "Street food / Snack",
+              "statut": "Populaire",
+              "ingredients_principaux": ["banane plantain", "gingembre", "piment", "sel"],
+              "description": "Tranches de banane plantain très mûre frites après avoir été marinées au gingembre et piment.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Kontomire Stew",
+              "nom_local": "Palava Sauce",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["feuilles de taro", "poisson fumé", "huile de palme"],
+              "description": "Ragoût à base de feuilles de taro avec poisson fumé et huile de palme.",
+              "regime": "Pescatarien"
+            }
+          ]
+        },
+        {
+          "pays": "Côte d'Ivoire",
+          "code": "CI",
+          "plats": [
+            {
+              "nom": "Attiéké",
+              "nom_local": "Attiéké",
+              "type": "Accompagnement",
+              "statut": "Plat national",
+              "ingredients_principaux": ["manioc fermenté râpé"],
+              "description": "Semoule de manioc fermenté d'aspect similaire au couscous mais au goût plus acide. Accompagné de poisson grillé et sauce tomate.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Aloco",
+              "nom_local": "Aloco",
+              "type": "Accompagnement / Street food",
+              "statut": "Populaire",
+              "ingredients_principaux": ["banane plantain", "huile", "poisson grillé", "sauce tomate"],
+              "description": "Bananes plantain mûres frites, servies avec poisson grillé et sauce tomate épicée.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Kedjenou",
+              "nom_local": "Kedjenou",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["poulet ou pintade", "légumes", "épices", "piment"],
+              "description": "Poulet ou pintade mijoté très lentement dans un canari (marmite en terre cuite) sans eau ajoutée, avec légumes et épices.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Garba",
+              "nom_local": "Garba",
+              "type": "Street food",
+              "statut": "Populaire à Abidjan",
+              "ingredients_principaux": ["attiéké", "thon grillé", "oignon", "piment"],
+              "description": "Attiéké avec thon grillé, oignons et piment. Plat de rue emblématique d'Abidjan.",
+              "regime": "Pescatarien"
+            }
+          ]
+        },
+        {
+          "pays": "Mali",
+          "code": "ML",
+          "plats": [
+            {
+              "nom": "Tiguadèguèna",
+              "nom_local": "Tigua dégué",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["poulet ou bœuf", "pâte d'arachide", "tomate", "oignon"],
+              "description": "Cousin malien du mafé sénégalais. Poulet ou bœuf en sauce arachide onctueuse avec légumes.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Riz au gras",
+              "nom_local": "Riz gras",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["riz", "viande", "tomate", "huile"],
+              "description": "Riz cuit dans une sauce à base de tomate et d'huile avec viande. Version locale du jollof rice.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Tô",
+              "nom_local": "Tô",
+              "type": "Accompagnement",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["farine de mil", "farine de sorgho", "eau"],
+              "description": "Bouillie épaisse de farine de mil ou de sorgho, aliment de base accompagné de sauces variées.",
+              "regime": "Végétarien / Vegan"
+            }
+          ]
+        },
+        {
+          "pays": "Burkina Faso",
+          "code": "BF",
+          "plats": [
+            {
+              "nom": "Riz gras burkinabé",
+              "nom_local": "Riz gras",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["riz", "agneau ou bœuf", "tomate", "épices"],
+              "description": "Version locale du riz jolof avec agneau ou bœuf.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Tô de mil",
+              "nom_local": "Tô",
+              "type": "Accompagnement",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["farine de mil", "eau"],
+              "description": "Pâte épaisse de mil servie avec sauce de feuilles ou sauce arachide.",
+              "regime": "Végétarien / Vegan"
+            }
+          ]
+        },
+        {
+          "pays": "Guinée",
+          "code": "GN",
+          "plats": [
+            {
+              "nom": "Sauce feuilles",
+              "nom_local": "Sauce feuilles",
+              "type": "Sauce / Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["feuilles de manioc", "pâte d'arachide", "poisson fumé"],
+              "description": "Feuilles de manioc pilées cuites à la sauce arachide avec poisson fumé. Partagé avec plusieurs pays d'Afrique de l'Ouest.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Riz sauce gombo",
+              "nom_local": "Sauce gombo",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["riz", "gombo", "poisson fumé ou viande"],
+              "description": "Riz avec sauce à base de gombos, poisson ou viande fumée.",
+              "regime": "Omnivore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Afrique Centrale",
+      "pays": [
+        {
+          "pays": "Cameroun",
+          "code": "CM",
+          "plats": [
+            {
+              "nom": "Ndolé",
+              "nom_local": "Ndolé",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["feuilles de ndolé (amères)", "pâte d'arachide", "poisson fumé", "crevettes", "bœuf", "manioc bouilli"],
+              "description": "Plat emblématique du peuple Sawa. Feuilles amères de ndolé en sauce onctueuse à la pâte d'arachide. Poisson fumé, crevettes ou bœuf selon les traditions.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Poulet DG",
+              "nom_local": "DG (Directeur Général)",
+              "type": "Plat principal",
+              "statut": "Prestige",
+              "ingredients_principaux": ["poulet", "banane plantain", "légumes", "condiments"],
+              "description": "Plat cuisiné pour recevoir les personnalités. Poulet avec bananes plantain, légumes et condiments savoureux.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Eru",
+              "nom_local": "Eru / Okok",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["feuilles d'okok (okazi)", "waterleaf", "huile de palme", "viande fumée", "poisson fumé"],
+              "description": "Feuilles d'okok finement hachées cuites avec waterleaf, huile de palme et protéines variées.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Koki",
+              "nom_local": "Koki",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["haricots cornilles", "huile de palme", "feuilles de bananier"],
+              "description": "Gâteau de haricots à l'huile de palme cuit enveloppé dans des feuilles de bananier.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Mbanga Soup",
+              "nom_local": "Soupe de noix de palme",
+              "type": "Soupe",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["noix de palme", "poisson fumé", "viande", "épices"],
+              "description": "Soupe riche à la noix de palme avec poisson fumé ou viande.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "République Démocratique du Congo",
+          "code": "CD",
+          "plats": [
+            {
+              "nom": "Saka-saka",
+              "nom_local": "Saka-saka / Pondu",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["feuilles de manioc", "poisson fumé", "huile de palme", "beurre d'arachide"],
+              "description": "Plat national des deux Congo. Feuilles de manioc fraîches bouillies, pilées et mijotées avec poisson fumé, huile de palme et beurre d'arachide.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Liboké",
+              "nom_local": "Liboké",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["feuilles sauvages", "poulet ou poisson", "épices"],
+              "description": "Aliment enveloppé dans des feuilles sauvages et cuit à l'étouffée. Mode de cuisson ancestral pour poulet, poisson ou légumes.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Fumbwa",
+              "nom_local": "Fumbwa / Mfumbwa",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["feuilles de fumbwa", "huile de palme", "tomate", "oignon", "viande ou poisson"],
+              "description": "Feuilles hachées séchées cuisinées avec huile de palme. Appelé Eru ou Okok au Cameroun, Ukazi au Nigeria.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Chikwangue",
+              "nom_local": "Kwanga / Chikwanga",
+              "type": "Accompagnement",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["manioc fermenté"],
+              "description": "Pain de manioc fermenté emballé dans des feuilles de bananier. Emblème de la culture culinaire congolaise.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Poulet Mayo",
+              "nom_local": "Poulet Mayo",
+              "type": "Street food",
+              "statut": "Spécialité de Kinshasa",
+              "ingredients_principaux": ["poulet", "mayonnaise", "épices", "feuilles de bananier"],
+              "description": "Spécialité de Kinshasa. Poulet recouvert de mayonnaise et d'épices, enveloppé dans une feuille de bananier et cuit sur le feu.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Kanda",
+              "nom_local": "Kanda",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["bœuf haché", "graines de courge"],
+              "description": "Boulettes de bœuf aux graines de courge.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Bitekuteku",
+              "nom_local": "Bitekuteku",
+              "type": "Accompagnement",
+              "statut": "Populaire",
+              "ingredients_principaux": ["feuilles d'amarante", "oignon", "viande ou poisson", "piment"],
+              "description": "Feuilles d'amarante sautées. Appelé Folon au Cameroun, Efo Tete au Nigeria.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Congo-Brazzaville",
+          "code": "CG",
+          "plats": [
+            {
+              "nom": "Saka-saka",
+              "nom_local": "Saka-saka",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["feuilles de manioc", "poisson fumé", "huile de palme"],
+              "description": "Version congolaise des feuilles de manioc pilées. Partagé avec la RDC.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Mikates",
+              "nom_local": "Mikates",
+              "type": "Snack / Accompagnement",
+              "statut": "Populaire",
+              "ingredients_principaux": ["farine", "levure", "sucre"],
+              "description": "Petits beignets consommés en accompagnement d'un plat salé, en dessert ou au goûter.",
+              "regime": "Végétarien"
+            }
+          ]
+        },
+        {
+          "pays": "Gabon",
+          "code": "GA",
+          "plats": [
+            {
+              "nom": "Poulet Nyembwe",
+              "nom_local": "Nyembwe",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["poulet", "huile de nyembwe (palme)", "oignon", "ail", "épices"],
+              "description": "Plat national du Gabon. Poulet mijoté dans une sauce à base d'huile de nyembwe (noix de palme) extraite et filtrée.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Soso ya mwamba",
+              "nom_local": "Soso ya mwamba",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["poulet", "sauce moambe", "épices"],
+              "description": "Poulet en sauce moambe (huile de palme). Plat national revendiqué aussi par la RDC.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Rwanda & Burundi",
+          "code": "RW-BI",
+          "plats": [
+            {
+              "nom": "Isombe",
+              "nom_local": "Isombe",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["feuilles de manioc", "arachides", "haricots", "huile de palme"],
+              "description": "Feuilles de manioc pilées cuites avec arachides et haricots.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Brochettes de chèvre",
+              "nom_local": "Nyama / Mishkaki",
+              "type": "Grill",
+              "statut": "Très populaire",
+              "ingredients_principaux": ["chèvre", "épices", "oignon"],
+              "description": "Brochettes de chèvre cuites sur charbon de bois. Incontournables au Rwanda.",
+              "regime": "Omnivore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Maghreb",
+      "pays": [
+        {
+          "pays": "Maroc",
+          "code": "MA",
+          "plats": [
+            {
+              "nom": "Couscous",
+              "nom_local": "Kuskus",
+              "type": "Plat principal",
+              "statut": "Patrimoine UNESCO",
+              "ingredients_principaux": ["semoule de blé", "agneau ou poulet", "légumes de saison", "bouillon", "ras el hanout"],
+              "description": "Semoule travaillée à la main et cuite à la vapeur, servie avec ragoût de viande et légumes. Entré au patrimoine culturel immatériel de l'UNESCO.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Tajine",
+              "nom_local": "Tajine",
+              "type": "Plat principal",
+              "statut": "Emblématique",
+              "ingredients_principaux": ["agneau ou poulet", "légumes", "safran", "cumin", "cannelle", "citron confit"],
+              "description": "Ragoût cuit lentement dans un plat conique en terre cuite avec légumes, viande et épices complexes.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Pastilla",
+              "nom_local": "Bastilla",
+              "type": "Plat festif",
+              "statut": "Prestige",
+              "ingredients_principaux": ["feuilletage fin (warka)", "pigeon ou poulet", "amandes", "œufs", "cannelle", "sucre glace"],
+              "description": "Plat de fête sucré-salé. Feuilletage fin fourré au pigeon ou poulet, amandes, œufs et épices.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Harira",
+              "nom_local": "Harira",
+              "type": "Soupe",
+              "statut": "Traditionnelle Ramadan",
+              "ingredients_principaux": ["lentilles", "pois chiches", "tomate", "coriandre", "viande", "vermicelles"],
+              "description": "Soupe épaisse et nourrissante, incontournable pendant le Ramadan pour rompre le jeûne.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Mechoui",
+              "nom_local": "Mechoui",
+              "type": "Plat festif",
+              "statut": "Festif",
+              "ingredients_principaux": ["agneau entier", "beurre", "épices", "ail"],
+              "description": "Agneau entier rôti lentement au feu de bois, fondant sous la fourchette.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Zaalouk",
+              "nom_local": "Zaalouk",
+              "type": "Salade / Entrée",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["aubergine", "tomate", "ail", "huile d'olive", "épices"],
+              "description": "Caviar d'aubergines grillées à l'huile d'olive et aux épices.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Mrouzia",
+              "nom_local": "Mrouzia",
+              "type": "Plat festif",
+              "statut": "Festif",
+              "ingredients_principaux": ["agneau", "miel", "amandes", "raisins secs", "ras el hanout"],
+              "description": "Agneau confit au miel, amandes et raisins secs. Sucré-salé typique des grandes fêtes.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Algérie",
+          "code": "DZ",
+          "plats": [
+            {
+              "nom": "Couscous algérien",
+              "nom_local": "Kseksou",
+              "type": "Plat principal",
+              "statut": "National",
+              "ingredients_principaux": ["semoule de blé", "agneau", "légumes de saison", "bouillon"],
+              "description": "Version algérienne avec agneau, légumes de saison et bouillon généreux.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Chorba",
+              "nom_local": "Chorba",
+              "type": "Soupe",
+              "statut": "Traditionnelle Ramadan",
+              "ingredients_principaux": ["viande", "légumes", "vermicelles", "tomate", "épices"],
+              "description": "Soupe épicée aux légumes et vermicelles, très consommée pendant le Ramadan.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Chakhchoukha",
+              "nom_local": "Chakhchoukha",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["galette de pain émietté", "viande", "légumes", "sauce épicée"],
+              "description": "Galette de pain émietté arrosée d'un ragoût de viande et légumes. Plat du sud algérien.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Rechta",
+              "nom_local": "Rechta",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["pâtes maison", "poulet", "navets", "sauce blanche"],
+              "description": "Pâtes fines maison avec sauce blanche au poulet et navets. Spécialité d'Alger.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Garantita",
+              "nom_local": "Garantita",
+              "type": "Street food",
+              "statut": "Populaire à Oran",
+              "ingredients_principaux": ["farine de pois chiches", "œufs", "huile"],
+              "description": "Sorte de crêpe épaisse à la farine de pois chiches, très populaire à Oran.",
+              "regime": "Végétarien"
+            }
+          ]
+        },
+        {
+          "pays": "Tunisie",
+          "code": "TN",
+          "plats": [
+            {
+              "nom": "Couscous au poisson",
+              "nom_local": "Kusksu bil hout",
+              "type": "Plat principal",
+              "statut": "Régional (Sfax, Djerba)",
+              "ingredients_principaux": ["semoule", "poisson (mérou, mulet)", "harissa", "légumes"],
+              "description": "Version tunisienne très pimentée du couscous au poisson frais. Spécialité de Sfax et Djerba.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Brik",
+              "nom_local": "Brik",
+              "type": "Entrée / Street food",
+              "statut": "Populaire",
+              "ingredients_principaux": ["feuille de brick", "œuf", "thon", "persil", "harissa"],
+              "description": "Feuille de brick croustillante farcie d'œuf, thon ou viande hachée, frite à la poêle. Incontournable.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Lablabi",
+              "nom_local": "Lablabi",
+              "type": "Soupe / Plat principal",
+              "statut": "Street food populaire",
+              "ingredients_principaux": ["pois chiches", "pain rassis", "harissa", "ail", "cumin", "œuf"],
+              "description": "Soupe de pois chiches avec pain rassis, harissa, ail et cumin. Plat de rue réconfortant.",
+              "regime": "Végétarien"
+            },
+            {
+              "nom": "Ojja Merguez",
+              "nom_local": "Ojja",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["merguez", "œufs", "tomate", "poivron", "harissa"],
+              "description": "Œufs et merguez mijotés dans une sauce tomate pimentée. Plat familial populaire.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Fricassé",
+              "nom_local": "Fricassé",
+              "type": "Street food",
+              "statut": "Très populaire",
+              "ingredients_principaux": ["pain frit", "thon", "olives", "harissa", "câpres"],
+              "description": "Petit pain frit fourré au thon, olives, harissa et câpres. Sandwich tunisien incontournable.",
+              "regime": "Pescatarien"
+            }
+          ]
+        },
+        {
+          "pays": "Libye",
+          "code": "LY",
+          "plats": [
+            {
+              "nom": "Imbabaka",
+              "nom_local": "Imbabaka / Macarona Jariya",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["pâtes", "tomate", "épices", "viande"],
+              "description": "Pâtes épicées cuisinées en une seule casserole. Appelé Macarona Jariya à l'est du pays. Influence italienne.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Bazeen",
+              "nom_local": "Bazeen",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["farine d'orge", "eau", "agneau", "tomate", "épices"],
+              "description": "Pâte épaisse d'orge bouillie servie avec ragoût d'agneau et épices. Plat traditionnel berbère.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Sharba Libya",
+              "nom_local": "Sharba",
+              "type": "Soupe",
+              "statut": "Traditionnel Ramadan",
+              "ingredients_principaux": ["agneau", "tomate", "pois chiches", "épices", "vermicelles"],
+              "description": "Soupe traditionnelle libyenne à l'agneau, tomates et épices.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Mauritanie",
+          "code": "MR",
+          "plats": [
+            {
+              "nom": "Thiébou dieune mauritanien",
+              "nom_local": "Ceebu jën",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["riz", "poisson", "légumes", "tomate"],
+              "description": "Version mauritanienne du riz au poisson, partagée avec le Sénégal voisin.",
+              "regime": "Pescatarien"
+            },
+            {
+              "nom": "Zrigué",
+              "nom_local": "Zrigué",
+              "type": "Boisson traditionnelle",
+              "statut": "Cérémoniel",
+              "ingredients_principaux": ["lait de chamelle fermenté"],
+              "description": "Lait de chamelle fermenté consommé lors des cérémonies et des fêtes.",
+              "regime": "Végétarien"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Afrique de l'Est",
+      "pays": [
+        {
+          "pays": "Éthiopie",
+          "code": "ET",
+          "plats": [
+            {
+              "nom": "Doro Wat",
+              "nom_local": "Doro Wat",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["poulet", "berbéré (mélange d'épices)", "oignon", "beurre clarifié (niter kibbeh)", "œufs durs"],
+              "description": "Ragoût de poulet très épicé à la sauce berbéré. Plat national incontournable, servi avec des œufs sur l'injera.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Injera",
+              "nom_local": "Injera",
+              "type": "Pain / Accompagnement",
+              "statut": "Aliment de base national",
+              "ingredients_principaux": ["farine de teff", "eau"],
+              "description": "Grande crêpe spongieuse fermentée à base de farine de teff. Sert d'assiette comestible pour tous les ragoûts (wats).",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Misir Wat",
+              "nom_local": "Misir Wat",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["lentilles rouges", "berbéré", "oignon", "ail", "gingembre"],
+              "description": "Lentilles rouges épicées à la sauce berbéré. Plat végétarien emblématique de la cuisine éthiopienne.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Gomen",
+              "nom_local": "Gomen",
+              "type": "Accompagnement",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["chou vert ou kale", "ail", "gingembre", "oignon", "piment"],
+              "description": "Feuilles de chou vert ou kale mijotées avec ail, gingembre, oignon et piment.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Kitfo",
+              "nom_local": "Kitfo",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["bœuf haché", "mitmita (épices)", "beurre clarifié (niter kibbeh)"],
+              "description": "Bœuf haché cru ou légèrement cuit, assaisonné de mitmita et de beurre clarifié. Tartare éthiopien.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Kenya",
+          "code": "KE",
+          "plats": [
+            {
+              "nom": "Nyama Choma",
+              "nom_local": "Nyama Choma",
+              "type": "Grill",
+              "statut": "Plat de fête national",
+              "ingredients_principaux": ["chèvre ou bœuf", "épices", "sel"],
+              "description": "Viande de chèvre ou bœuf grillée sur charbon de bois. Plat de fête et de convivialité incontournable.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Ugali",
+              "nom_local": "Ugali",
+              "type": "Accompagnement",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["farine de maïs", "eau"],
+              "description": "Bouillie épaisse de farine de maïs blanc, consommée quotidiennement. Remplace les couverts pour accompagner les sauces.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Sukuma Wiki",
+              "nom_local": "Sukuma Wiki",
+              "type": "Accompagnement",
+              "statut": "Populaire",
+              "ingredients_principaux": ["chou frisé (kale)", "oignon", "tomate"],
+              "description": "Légumes verts sautés (chou frisé) avec oignons et tomates. Signifie 'pousser la semaine' en swahili.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Chapati",
+              "nom_local": "Chapo",
+              "type": "Pain",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["farine", "eau", "sel", "huile"],
+              "description": "Pain sans levain plat et moelleux. Héritage de la communauté indienne au Kenya depuis le XIXe siècle.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Githeri",
+              "nom_local": "Githeri",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["haricots", "maïs", "oignon", "tomate"],
+              "description": "Mélange de haricots et maïs bouillis ensemble. Plat simple et nourrissant.",
+              "regime": "Végétarien / Vegan"
+            }
+          ]
+        },
+        {
+          "pays": "Tanzanie",
+          "code": "TZ",
+          "plats": [
+            {
+              "nom": "Pilau",
+              "nom_local": "Pilau",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["riz", "viande", "cannelle", "cardamome", "clous de girofle"],
+              "description": "Riz épicé cuit avec viande et épices aromatiques. Héritage de la culture swahili et de l'influence arabe.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Mshikaki",
+              "nom_local": "Mshikaki",
+              "type": "Street food / Grill",
+              "statut": "Populaire",
+              "ingredients_principaux": ["bœuf ou agneau", "épices", "citron"],
+              "description": "Brochettes de viande marinées aux épices, grillées sur charbon de bois.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Mozambique",
+          "code": "MZ",
+          "plats": [
+            {
+              "nom": "Matapa",
+              "nom_local": "Matapa",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["jeunes feuilles de manioc", "lait de coco", "cacahuètes", "ail"],
+              "description": "Jeunes feuilles de manioc pilées cuites avec lait de coco, cacahuètes et ail. Plat végétarien unique au Mozambique.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Piri-Piri Chicken",
+              "nom_local": "Frango Piri-Piri",
+              "type": "Plat principal",
+              "statut": "Emblématique",
+              "ingredients_principaux": ["poulet", "piment piri-piri", "ail", "citron", "huile"],
+              "description": "Poulet grillé mariné au piment piri-piri. Héritage portugais devenu signature culinaire nationale.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Camarão com coco",
+              "nom_local": "Camarão com coco",
+              "type": "Plat principal",
+              "statut": "Traditionnel côtier",
+              "ingredients_principaux": ["crevettes", "lait de coco", "épices", "tomate"],
+              "description": "Crevettes au lait de coco et épices. Influence portugaise et influence des îles de l'Océan Indien.",
+              "regime": "Pescatarien"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Afrique Australe",
+      "pays": [
+        {
+          "pays": "Afrique du Sud",
+          "code": "ZA",
+          "plats": [
+            {
+              "nom": "Braai",
+              "nom_local": "Braai",
+              "type": "Grill / Barbecue",
+              "statut": "Institution nationale",
+              "ingredients_principaux": ["viandes variées", "boerewors", "côtelettes d'agneau", "charbon ou bois"],
+              "description": "Barbecue traditionnel sud-africain. Véritable institution sociale et culturelle, équivalent du barbecue américain.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Bunny Chow",
+              "nom_local": "Bunny Chow",
+              "type": "Street food",
+              "statut": "Populaire (origine Durban)",
+              "ingredients_principaux": ["pain de mie évidé", "curry d'agneau ou légumes", "épices"],
+              "description": "Pain évidé fourré au curry épicé. Originaire de Durban, témoigne de l'influence indienne sur la gastronomie sud-africaine.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Bobotie",
+              "nom_local": "Bobotie",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["viande hachée", "épices", "fruits secs", "œufs", "lait"],
+              "description": "Viande hachée épicée aux fruits secs, recouverte d'une couche de crème aux œufs et gratinée au four.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Chakalaka",
+              "nom_local": "Chakalaka",
+              "type": "Condiment / Accompagnement",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["poivrons", "tomates", "oignons", "haricots", "piment"],
+              "description": "Condiment-ragoût de légumes très pimenté, similaire à une ratatouille épicée. Accompagnement du braai.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Mielie-meal Pap",
+              "nom_local": "Pap",
+              "type": "Accompagnement",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["farine de maïs", "eau", "sel"],
+              "description": "Bouillie de farine de maïs servie avec sauces ou ragoûts. Équivalent local de l'ugali.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Biltong",
+              "nom_local": "Biltong",
+              "type": "Snack",
+              "statut": "Snack national",
+              "ingredients_principaux": ["bœuf ou gibier séché", "vinaigre", "épices", "sel"],
+              "description": "Viande séchée et épicée. Snack national consommé partout en Afrique du Sud.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Boerewors",
+              "nom_local": "Boerewors",
+              "type": "Grill",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["bœuf haché", "épices (coriandre, noix de muscade)", "boyaux"],
+              "description": "Saucisse traditionnelle afrikaner à base de bœuf et épices, incontournable du braai.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Zimbabwe",
+          "code": "ZW",
+          "plats": [
+            {
+              "nom": "Sadza",
+              "nom_local": "Sadza",
+              "type": "Accompagnement",
+              "statut": "Plat national",
+              "ingredients_principaux": ["farine de maïs blanc", "eau"],
+              "description": "Bouillie épaisse de maïs blanc, plat national servi avec viande, légumes ou haricots.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Muriwo ne Nyama",
+              "nom_local": "Muriwo ne Nyama",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["légumes verts", "bœuf", "oignon", "tomate"],
+              "description": "Légumes verts sautés avec viande de bœuf.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Matemba",
+              "nom_local": "Matemba / Kapenta",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["petits poissons séchés (kapenta)", "tomate", "oignon"],
+              "description": "Petits poissons séchés cuisinés avec tomates et oignons. Source de protéines accessible.",
+              "regime": "Pescatarien"
+            }
+          ]
+        },
+        {
+          "pays": "Namibie",
+          "code": "NA",
+          "plats": [
+            {
+              "nom": "Oshifima",
+              "nom_local": "Oshifima",
+              "type": "Accompagnement",
+              "statut": "Aliment de base",
+              "ingredients_principaux": ["farine de mil", "eau"],
+              "description": "Bouillie épaisse de farine de mil, aliment de base des communautés Ovambo.",
+              "regime": "Végétarien / Vegan"
+            },
+            {
+              "nom": "Brochettes de gibier",
+              "nom_local": "Game meat brochettes",
+              "type": "Grill",
+              "statut": "Spécialité locale",
+              "ingredients_principaux": ["impala", "phacochère", "autruche ou crocodile", "épices", "lait de coco"],
+              "description": "Brochettes de viandes sauvages marinées aux épices, piment, beurre de cacahuète et lait de coco.",
+              "regime": "Omnivore"
+            }
+          ]
+        },
+        {
+          "pays": "Madagascar",
+          "code": "MG",
+          "plats": [
+            {
+              "nom": "Romazava",
+              "nom_local": "Romazava",
+              "type": "Plat principal",
+              "statut": "Plat national",
+              "ingredients_principaux": ["zébu", "feuilles de brèdes variées", "gingembre", "tomate"],
+              "description": "Ragoût national à base de viande de zébu et de feuilles de brèdes. Plat convivial emblématique.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Ravitoto sy Henakisoa",
+              "nom_local": "Ravitoto",
+              "type": "Plat principal",
+              "statut": "Traditionnel",
+              "ingredients_principaux": ["feuilles de manioc pilées", "porc", "huile", "ail"],
+              "description": "Feuilles de manioc pilées avec viande de porc, ail et huile.",
+              "regime": "Omnivore"
+            },
+            {
+              "nom": "Vary amin'anana",
+              "nom_local": "Vary amin'anana",
+              "type": "Plat principal",
+              "statut": "Populaire",
+              "ingredients_principaux": ["riz", "feuilles de légumes verts", "viande", "gingembre"],
+              "description": "Riz aux feuilles de légumes verts. Plat réconfortant du quotidien malgache.",
+              "regime": "Omnivore"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ingredients_recurrents": {
+    "Huile de palme": "Afrique centrale et de l'Ouest",
+    "Manioc": "Présent sous toutes ses formes dans toute l'Afrique subsaharienne",
+    "Plantain": "Afrique centrale et de l'Ouest",
+    "Arachides": "Omniprésentes en sauces dans toute l'Afrique",
+    "Maïs (ugali, pap, sadza)": "Aliment de base de l'Afrique de l'Est et australe",
+    "Mil / Sorgho": "Afrique de l'Ouest et centrale",
+    "Poisson fumé": "Afrique de l'Ouest et centrale",
+    "Feuilles de manioc": "Afrique centrale principalement",
+    "Berbéré": "Épice emblématique d'Éthiopie",
+    "Harissa": "Condiment emblématique du Maghreb",
+    "Ras el hanout": "Mélange d'épices emblématique du Maroc",
+    "Lait de coco": "Afrique de l'Est et Mozambique",
+    "Teff": "Céréale unique à l'Éthiopie (injera)"
+  },
+  "notes_developpement": {
+    "usage_prevu": "Base de données pour application web ou mobile de découverte de la gastronomie africaine",
+    "champs_disponibles": ["nom", "nom_local", "type", "statut", "ingredients_principaux", "description", "regime"],
+    "filtres_possibles": ["region", "pays", "type", "regime", "ingredient"],
+    "fonctionnalites_suggerees": [
+      "Recherche par ingrédient",
+      "Filtre végétarien / végane",
+      "Carte interactive par pays",
+      "Plats nationaux mis en avant",
+      "Comparaison des versions régionales d'un même plat (ex: jollof rice)",
+      "Section 'Plats à partager' vs 'Plats individuels'",
+      "Niveau de piment / épices",
+      "Temps de préparation estimé"
+    ]
+  }
+}

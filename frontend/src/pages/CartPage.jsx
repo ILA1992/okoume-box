@@ -55,13 +55,13 @@ const CartPage = () => {
       .finally(() => setOrdering(false));
   };
 
-  if (loading) return <div className="min-h-screen bg-amber-50 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full" /></div>;
+  if (loading) return <div className="min-h-screen bg-orange-50 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-orange-600 border-t-transparent rounded-full" /></div>;
 
   return (
-    <div className="min-h-screen bg-amber-50" data-testid="cart-page">
+    <div className="min-h-screen bg-orange-50" data-testid="cart-page">
       <div className="bg-white border-b border-stone-200">
         <div className="container-custom py-4">
-          <Link to="/catalogue" className="inline-flex items-center gap-2 text-stone-600 hover:text-amber-600"><ArrowLeft className="w-4 h-4" />Continuer mes achats</Link>
+          <Link to="/catalogue" className="inline-flex items-center gap-2 text-stone-600 hover:text-orange-600"><ArrowLeft className="w-4 h-4" />Continuer mes achats</Link>
         </div>
       </div>
 
@@ -71,9 +71,9 @@ const CartPage = () => {
         {cart.items.length === 0 ? (
           <Card className="border-0 shadow-sm">
             <CardContent className="py-20 text-center">
-              <ShoppingCart className="w-10 h-10 text-amber-600 mx-auto mb-4" />
+              <ShoppingCart className="w-10 h-10 text-orange-600 mx-auto mb-4" />
               <h2 className="font-heading text-xl font-semibold mb-2">Panier vide</h2>
-              <Link to="/catalogue"><Button className="bg-amber-600 hover:bg-amber-700 rounded-full px-8">Voir les box</Button></Link>
+              <Link to="/catalogue"><Button className="bg-orange-600 hover:bg-orange-700 rounded-full px-8">Voir les box</Button></Link>
             </CardContent>
           </Card>
         ) : (
@@ -89,7 +89,7 @@ const CartPage = () => {
                           <h3 className="font-heading font-semibold">{item.name}</h3>
                           <Button variant="ghost" size="icon" className="text-stone-400 hover:text-red-500" onClick={() => removeItem(item.box_id)} data-testid={`remove-item-${item.box_id}`}><Trash2 className="w-4 h-4" /></Button>
                         </div>
-                        <p className="font-heading text-lg font-bold text-amber-600 mb-3">{item.price.toFixed(2)}€</p>
+                        <p className="font-heading text-lg font-bold text-orange-600 mb-3">{item.price.toFixed(2)}€</p>
                         <div className="flex items-center gap-3">
                           <div className="flex items-center border border-stone-200 rounded-full">
                             <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full" onClick={() => updateQuantity(item.box_id, item.quantity - 1)} disabled={item.quantity <= 1}><Minus className="w-4 h-4" /></Button>
@@ -113,16 +113,16 @@ const CartPage = () => {
                   <div className="flex justify-between"><span>Livraison</span><span className="text-green-600">Gratuite</span></div>
                   <div className="border-t pt-4 flex justify-between">
                     <span className="font-semibold">Total</span>
-                    <span className="font-heading text-2xl font-bold text-amber-600">{cart.total.toFixed(2)}€</span>
+                    <span className="font-heading text-2xl font-bold text-orange-600">{cart.total.toFixed(2)}€</span>
                   </div>
 
                   {!showCheckout ? (
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 rounded-full py-6" onClick={() => setShowCheckout(true)} data-testid="proceed-checkout-btn"><CreditCard className="w-5 h-5 mr-2" />Commander</Button>
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700 rounded-full py-6" onClick={() => setShowCheckout(true)} data-testid="proceed-checkout-btn"><CreditCard className="w-5 h-5 mr-2" />Commander</Button>
                   ) : (
                     <form onSubmit={handleOrder} className="space-y-4 pt-4 border-t">
-                      <div><Label><MapPin className="w-4 h-4 inline mr-1 text-amber-600" />Adresse</Label><Input value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} required data-testid="delivery-address-input" /></div>
-                      <div><Label><Phone className="w-4 h-4 inline mr-1 text-amber-600" />Téléphone</Label><Input value={phone} onChange={e => setPhone(e.target.value)} required data-testid="phone-input" /></div>
-                      <div><Label><CalendarIcon className="w-4 h-4 inline mr-1 text-amber-600" />Date</Label>
+                      <div><Label><MapPin className="w-4 h-4 inline mr-1 text-orange-600" />Adresse</Label><Input value={deliveryAddress} onChange={e => setDeliveryAddress(e.target.value)} required data-testid="delivery-address-input" /></div>
+                      <div><Label><Phone className="w-4 h-4 inline mr-1 text-orange-600" />Téléphone</Label><Input value={phone} onChange={e => setPhone(e.target.value)} required data-testid="phone-input" /></div>
+                      <div><Label><CalendarIcon className="w-4 h-4 inline mr-1 text-orange-600" />Date</Label>
                         <Popover><PopoverTrigger asChild><Button variant="outline" className="w-full justify-start" data-testid="delivery-date-btn">{deliveryDate ? format(deliveryDate, "PPP", { locale: fr }) : "Choisir"}</Button></PopoverTrigger>
                           <PopoverContent className="w-auto p-0"><Calendar mode="single" selected={deliveryDate} onSelect={setDeliveryDate} disabled={d => d < new Date()} /></PopoverContent>
                         </Popover>

@@ -35,16 +35,16 @@ const BoxDetailPage = () => {
     setAddingToCart(false);
   };
 
-  if (loading) return <div className="min-h-screen bg-amber-50 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-amber-600 border-t-transparent rounded-full" /></div>;
-  if (!box) return <div className="min-h-screen bg-amber-50 flex items-center justify-center"><h2>Box introuvable</h2></div>;
+  if (loading) return <div className="min-h-screen bg-orange-50 flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-orange-600 border-t-transparent rounded-full" /></div>;
+  if (!box) return <div className="min-h-screen bg-orange-50 flex items-center justify-center"><h2>Box introuvable</h2></div>;
 
   const countryData = countries.find(c => c.id === box.country);
 
   return (
-    <div className="min-h-screen bg-amber-50" data-testid="box-detail-page">
+    <div className="min-h-screen bg-orange-50" data-testid="box-detail-page">
       <div className="bg-white border-b border-stone-200">
         <div className="container-custom py-4">
-          <Link to="/catalogue" className="inline-flex items-center gap-2 text-stone-600 hover:text-amber-600" data-testid="back-to-catalogue">
+          <Link to="/catalogue" className="inline-flex items-center gap-2 text-stone-600 hover:text-orange-600" data-testid="back-to-catalogue">
             <ArrowLeft className="w-4 h-4" />Retour au catalogue
           </Link>
         </div>
@@ -61,7 +61,7 @@ const BoxDetailPage = () => {
               </Badge>
               <div className="absolute top-4 right-4 flex gap-2">
                 {box.is_vegetarian && <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center"><Leaf className="w-5 h-5 text-white" /></div>}
-                {box.is_gluten_free && <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center"><Wheat className="w-5 h-5 text-white" /></div>}
+                {box.is_gluten_free && <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center"><Wheat className="w-5 h-5 text-white" /></div>}
               </div>
             </div>
             
@@ -86,9 +86,9 @@ const BoxDetailPage = () => {
 
             {/* Stats */}
             <div className="flex flex-wrap gap-6 py-4 border-y border-stone-200">
-              <div className="flex items-center gap-2"><Clock className="w-5 h-5 text-amber-500" /><span>{box.prep_time} min</span></div>
-              <div className="flex items-center gap-2"><Users className="w-5 h-5 text-amber-500" /><span>{box.serves} personnes</span></div>
-              <div className="flex items-center gap-2"><Flame className="w-5 h-5 text-amber-500" /><span>{box.calories} kcal/portion</span></div>
+              <div className="flex items-center gap-2"><Clock className="w-5 h-5 text-orange-500" /><span>{box.prep_time} min</span></div>
+              <div className="flex items-center gap-2"><Users className="w-5 h-5 text-orange-500" /><span>{box.serves} personnes</span></div>
+              <div className="flex items-center gap-2"><Flame className="w-5 h-5 text-orange-500" /><span>{box.calories} kcal/portion</span></div>
             </div>
 
             {/* Price and CTA */}
@@ -96,7 +96,7 @@ const BoxDetailPage = () => {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <p className="text-sm text-stone-500 mb-1">Prix de la box</p>
-                  <p className="font-heading text-4xl font-bold text-amber-600">{box.price.toFixed(0)}€</p>
+                  <p className="font-heading text-4xl font-bold text-orange-600">{box.price.toFixed(0)}€</p>
                   <p className="text-sm text-stone-500">{box.dishes?.length || 4} recettes / {box.serves} personnes</p>
                 </div>
                 <div className="text-right">
@@ -105,11 +105,11 @@ const BoxDetailPage = () => {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button onClick={handleAddToCart} disabled={addingToCart} className="flex-1 bg-amber-600 hover:bg-amber-700 text-white rounded-full py-6 text-lg" data-testid="add-to-cart-btn">
+                <Button onClick={handleAddToCart} disabled={addingToCart} className="flex-1 bg-orange-600 hover:bg-orange-700 text-white rounded-full py-6 text-lg" data-testid="add-to-cart-btn">
                   {addingToCart ? <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2" /> : <ShoppingCart className="w-5 h-5 mr-2" />}
                   Ajouter au panier
                 </Button>
-                <Button variant="outline" className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50 rounded-full py-6" onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()} data-testid="personalize-box-btn">
+                <Button variant="outline" className="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 rounded-full py-6" onClick={() => document.querySelector('[data-testid="chat-toggle-btn"]')?.click()} data-testid="personalize-box-btn">
                   <Sparkles className="w-5 h-5 mr-2" />Personnaliser
                 </Button>
               </div>
@@ -120,7 +120,7 @@ const BoxDetailPage = () => {
               <CardHeader><CardTitle className="font-heading text-lg">Valeurs nutritionnelles par portion</CardTitle></CardHeader>
               <CardContent>
                 <div className="grid grid-cols-4 gap-4">
-                  <div className="text-center p-3 bg-amber-50 rounded-xl"><p className="font-heading text-xl font-bold text-amber-600">{box.nutritional_info.proteins}g</p><p className="text-xs text-stone-500">Protéines</p></div>
+                  <div className="text-center p-3 bg-orange-50 rounded-xl"><p className="font-heading text-xl font-bold text-orange-600">{box.nutritional_info.proteins}g</p><p className="text-xs text-stone-500">Protéines</p></div>
                   <div className="text-center p-3 bg-green-50 rounded-xl"><p className="font-heading text-xl font-bold text-green-600">{box.nutritional_info.carbs}g</p><p className="text-xs text-stone-500">Glucides</p></div>
                   <div className="text-center p-3 bg-blue-50 rounded-xl"><p className="font-heading text-xl font-bold text-blue-600">{box.nutritional_info.fats}g</p><p className="text-xs text-stone-500">Lipides</p></div>
                   <div className="text-center p-3 bg-purple-50 rounded-xl"><p className="font-heading text-xl font-bold text-purple-600">{box.nutritional_info.fiber}g</p><p className="text-xs text-stone-500">Fibres</p></div>
@@ -134,9 +134,9 @@ const BoxDetailPage = () => {
         <div className="mt-12">
           <Tabs defaultValue="dishes" className="w-full">
             <TabsList className="bg-white border border-stone-200 p-1 rounded-full">
-              <TabsTrigger value="dishes" className="rounded-full data-[state=active]:bg-amber-600 data-[state=active]:text-white">Plats inclus</TabsTrigger>
-              <TabsTrigger value="ingredients" className="rounded-full data-[state=active]:bg-amber-600 data-[state=active]:text-white">Ingrédients</TabsTrigger>
-              <TabsTrigger value="recipe" className="rounded-full data-[state=active]:bg-amber-600 data-[state=active]:text-white">Préparation</TabsTrigger>
+              <TabsTrigger value="dishes" className="rounded-full data-[state=active]:bg-orange-600 data-[state=active]:text-white">Plats inclus</TabsTrigger>
+              <TabsTrigger value="ingredients" className="rounded-full data-[state=active]:bg-orange-600 data-[state=active]:text-white">Ingrédients</TabsTrigger>
+              <TabsTrigger value="recipe" className="rounded-full data-[state=active]:bg-orange-600 data-[state=active]:text-white">Préparation</TabsTrigger>
             </TabsList>
 
             <TabsContent value="dishes" className="mt-6">
@@ -144,8 +144,8 @@ const BoxDetailPage = () => {
                 {box.dishes && box.dishes.map((dish, i) => (
                   <Card key={i} className="border-0 shadow-sm hover:shadow-md transition-shadow">
                     <CardContent className="p-5 flex gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
-                        <Star className="w-6 h-6 text-amber-600" />
+                      <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+                        <Star className="w-6 h-6 text-orange-600" />
                       </div>
                       <div>
                         <h4 className="font-heading font-semibold text-stone-900">{dish.name}</h4>
@@ -159,7 +159,7 @@ const BoxDetailPage = () => {
 
             <TabsContent value="ingredients" className="mt-6">
               <Card className="border-0 shadow-sm">
-                <CardHeader><CardTitle className="font-heading flex items-center gap-2"><ChefHat className="w-5 h-5 text-amber-600" />Ingrédients fournis</CardTitle></CardHeader>
+                <CardHeader><CardTitle className="font-heading flex items-center gap-2"><ChefHat className="w-5 h-5 text-orange-600" />Ingrédients fournis</CardTitle></CardHeader>
                 <CardContent>
                   <ul className="grid md:grid-cols-2 gap-3">
                     {box.ingredients.map((ing, i) => (
@@ -174,12 +174,12 @@ const BoxDetailPage = () => {
 
             <TabsContent value="recipe" className="mt-6">
               <Card className="border-0 shadow-sm">
-                <CardHeader><CardTitle className="font-heading flex items-center gap-2"><ChefHat className="w-5 h-5 text-amber-600" />Étapes de préparation</CardTitle></CardHeader>
+                <CardHeader><CardTitle className="font-heading flex items-center gap-2"><ChefHat className="w-5 h-5 text-orange-600" />Étapes de préparation</CardTitle></CardHeader>
                 <CardContent>
                   <ol className="space-y-4">
                     {box.recipe_steps.map((step, i) => (
                       <li key={i} className="flex gap-4">
-                        <div className="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center flex-shrink-0 text-white font-bold">{i + 1}</div>
+                        <div className="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center flex-shrink-0 text-white font-bold">{i + 1}</div>
                         <p className="pt-1 text-stone-700">{step}</p>
                       </li>
                     ))}

@@ -60,7 +60,7 @@ const AuthPage = () => {
           <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mb-6">
             <ChefHat className="w-10 h-10" />
           </div>
-          <h1 className="font-heading text-4xl font-bold mb-4 text-center">Bienvenue sur AfroBox</h1>
+          <h1 className="font-heading text-4xl font-bold mb-4 text-center">Bienvenue sur Okoumé Box</h1>
           <p className="text-amber-100 text-center max-w-md mb-8">
             Découvrez la cuisine africaine saine et savoureuse. Des box équilibrées livrées chez vous.
           </p>
@@ -130,7 +130,7 @@ const AuthPage = () => {
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <CardTitle className="font-heading text-2xl">Créer un compte</CardTitle>
-                  <CardDescription>Rejoignez la communauté AfroBox</CardDescription>
+                  <CardDescription>Rejoignez la communauté Okoumé Box</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleRegister} className="space-y-4">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -22,31 +22,32 @@ code {
 
 @layer base {
     :root {
-        --background: 48 100% 96%;
-        --foreground: 20 14% 10%;
+        /* Couleurs Okoumé Box — chaleureux & authentique */
+        --background: 35 78% 97%;          /* crème chaude */
+        --foreground: 20 25% 12%;          /* brun foncé */
         --card: 0 0% 100%;
-        --card-foreground: 20 14% 10%;
+        --card-foreground: 20 25% 12%;
         --popover: 0 0% 100%;
-        --popover-foreground: 20 14% 10%;
-        --primary: 32 95% 44%;
+        --popover-foreground: 20 25% 12%;
+        --primary: 22 96% 48%;             /* orange vif terracotta #F05E0E */
         --primary-foreground: 0 0% 100%;
-        --secondary: 142 64% 24%;
+        --secondary: 138 55% 28%;          /* vert forêt profond */
         --secondary-foreground: 0 0% 100%;
-        --muted: 33 100% 96%;
-        --muted-foreground: 20 6% 45%;
-        --accent: 38 92% 50%;
-        --accent-foreground: 20 14% 10%;
+        --muted: 35 60% 94%;
+        --muted-foreground: 20 10% 45%;
+        --accent: 40 98% 52%;              /* or / jaune africain vif */
+        --accent-foreground: 20 25% 12%;
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
-        --border: 33 30% 88%;
-        --input: 33 30% 88%;
-        --ring: 32 95% 44%;
-        --chart-1: 32 95% 44%;
-        --chart-2: 142 64% 24%;
-        --chart-3: 38 92% 50%;
-        --chart-4: 20 14% 10%;
-        --chart-5: 33 30% 70%;
-        --radius: 0.75rem;
+        --border: 35 30% 85%;
+        --input: 35 30% 85%;
+        --ring: 22 96% 48%;
+        --chart-1: 22 96% 48%;
+        --chart-2: 138 55% 28%;
+        --chart-3: 40 98% 52%;
+        --chart-4: 20 25% 12%;
+        --chart-5: 35 40% 65%;
+        --radius: 0.875rem;
     }
 }
 
@@ -57,6 +58,15 @@ code {
     body {
         @apply bg-background text-foreground;
     }
+}
+
+/* Hide scrollbar for filter pills */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
 }
 
 /* Custom scrollbar */
@@ -140,11 +150,4 @@ code {
     height: 100%;
     opacity: 0.03;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-@layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
-    }
-}
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractal

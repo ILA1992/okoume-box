@@ -32,12 +32,12 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-amber-50" data-testid="blog-page">
+    <div className="min-h-screen bg-orange-50" data-testid="blog-page">
       {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-500 text-white">
+      <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white">
         <div className="container-custom py-16">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Blog Recettes Africaines</h1>
-          <p className="text-lg text-amber-100 max-w-2xl">
+          <p className="text-lg text-orange-100 max-w-2xl">
             Découvrez les secrets des plats emblématiques d'Afrique. Recettes authentiques revisitées healthy.
           </p>
         </div>
@@ -71,9 +71,9 @@ const BlogPage = () => {
           </div>
         ) : recipes.length === 0 ? (
           <div className="text-center py-20">
-            <ChefHat className="w-10 h-10 text-amber-600 mx-auto mb-4" />
+            <ChefHat className="w-10 h-10 text-orange-600 mx-auto mb-4" />
             <h3 className="font-heading text-xl font-semibold mb-2">Aucune recette trouvée</h3>
-            <Button onClick={() => setCountryFilter("all")} className="bg-amber-600 hover:bg-amber-700">Voir toutes</Button>
+            <Button onClick={() => setCountryFilter("all")} className="bg-orange-600 hover:bg-orange-700">Voir toutes</Button>
           </div>
         ) : (
           <>
@@ -92,19 +92,19 @@ const BlogPage = () => {
                       </div>
                       <CardContent className="p-6 flex flex-col justify-between">
                         <div>
-                          <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-2">{recipe.difficulty}</p>
-                          <h3 className="font-heading text-xl font-semibold text-stone-900 mb-2 group-hover:text-amber-600 transition-colors">{recipe.title}</h3>
+                          <p className="text-xs text-orange-600 font-semibold uppercase tracking-wide mb-2">{recipe.difficulty}</p>
+                          <h3 className="font-heading text-xl font-semibold text-stone-900 mb-2 group-hover:text-orange-600 transition-colors">{recipe.title}</h3>
                           <p className="text-stone-500 text-sm line-clamp-2 mb-4">{recipe.description}</p>
                         </div>
                         <div>
                           <div className="flex items-center gap-4 mb-4 text-sm text-stone-600">
-                            <div className="flex items-center gap-1"><Clock className="w-4 h-4 text-amber-500" /><span>{recipe.prep_time + recipe.cook_time} min</span></div>
-                            <div className="flex items-center gap-1"><Users className="w-4 h-4 text-amber-500" /><span>{recipe.serves} pers.</span></div>
+                            <div className="flex items-center gap-1"><Clock className="w-4 h-4 text-orange-500" /><span>{recipe.prep_time + recipe.cook_time} min</span></div>
+                            <div className="flex items-center gap-1"><Users className="w-4 h-4 text-orange-500" /><span>{recipe.serves} pers.</span></div>
                           </div>
                           <div className="flex items-center justify-between">
                             <p className="text-xs text-stone-400">Par {recipe.author}</p>
                             <Link to={`/blog/${recipe.id}`}>
-                              <Button variant="ghost" size="sm" className="text-amber-600 hover:text-amber-700 hover:bg-amber-50 group/btn" data-testid={`view-recipe-btn-${recipe.id}`}>
+                              <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50 group/btn" data-testid={`view-recipe-btn-${recipe.id}`}>
                                 Lire <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                               </Button>
                             </Link>

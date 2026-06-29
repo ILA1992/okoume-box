@@ -4,21 +4,17 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Flame, ArrowRight, Leaf, Wheat } from "lucide-react";
 
-const regionColors = {
-  nord: "bg-amber-100 text-amber-700",
-  sud: "bg-green-100 text-green-700",
-  est: "bg-red-100 text-red-700",
-  ouest: "bg-blue-100 text-blue-700",
-};
-
-const regionLabels = {
-  nord: "Afrique du Nord",
-  sud: "Afrique du Sud",
-  est: "Afrique de l'Est",
-  ouest: "Afrique de l'Ouest",
+const countryLabels = {
+  gabon: "Gabon",
+  cameroun: "Cameroun",
+  "cote-ivoire": "Côte d'Ivoire",
+  congo: "Congo",
+  senegal: "Sénégal",
+  multi: "Multi-Pays",
 };
 
 export const BoxCard = ({ box }) => {
+  const countryName = countryLabels[box.country] || box.country || "Pays";
   return (
     <Card 
       className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border-0"
@@ -34,10 +30,8 @@ export const BoxCard = ({ box }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
         {/* Region Badge */}
-        <Badge 
-          className={`absolute top-3 left-3 ${regionColors[box.region]} border-0 font-medium`}
-        >
-          {regionLabels[box.region]}
+        <Badge className="absolute top-3 left-3 bg-white/95 text-stone-800 border-0 font-medium">
+          {box.country_flag || "🌍"} {countryName}
         </Badge>
 
         {/* Diet Badges */}

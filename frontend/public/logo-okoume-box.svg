@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Okoumé Box">
+  <defs>
+    <style>
+      .logo-orange { fill: #D94B13; }
+      .logo-green  { fill: #4A8B15; }
+    </style>
+  </defs>
+
+  <!-- ═══════════════════════════════ -->
+  <!--   BOX ICON  (left, 0–140 x)   -->
+  <!-- ═══════════════════════════════ -->
+
+  <!-- Box body -->
+  <path d="M22 148 L22 238 Q22 244 28 244 L132 244 Q138 244 138 238 L138 148 Z"
+        fill="none" stroke="#4A8B15" stroke-width="6.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Front crease line -->
+  <line x1="22" y1="192" x2="138" y2="192" stroke="#4A8B15" stroke-width="2.5" stroke-dasharray="4,3"/>
+
+  <!-- Orange / red band -->
+  <rect x="21.5" y="170" width="117" height="24" fill="#D94B13" rx="3"/>
+
+  <!-- Left flap (open, tilted left-up) -->
+  <path d="M22 148 L6 102 L72 120 L80 148"
+        fill="none" stroke="#4A8B15" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Right flap (open, tilted right-up) -->
+  <path d="M138 148 L154 102 L88 120 L80 148"
+        fill="none" stroke="#4A8B15" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- ═══════════════════ -->
+  <!--   SPARKLES / GEMS  -->
+  <!-- ═══════════════════ -->
+
+  <!-- Centre diamond (biggest) -->
+  <path d="M80 54 L87 72 L80 90 L73 72 Z" fill="#4A8B15"/>
+  <!-- Left diamond -->
+  <path d="M48 62 L53 75 L48 88 L43 75 Z" fill="#4A8B15"/>
+  <!-- Right diamond -->
+  <path d="M112 62 L117 75 L112 88 L107 75 Z" fill="#4A8B15"/>
+
+  <!-- Vertical spark lines -->
+  <line x1="63" y1="100" x2="63" y2="72" stroke="#4A8B15" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="80" y1="100" x2="80" y2="50" stroke="#4A8B15" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="97" y1="100" x2="97" y2="72" stroke="#4A8B15" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Small side dots -->
+  <circle cx="36" cy="80" r="4" fill="#4A8B15"/>
+  <circle cx="124" cy="80" r="4" fill="#4A8B15"/>
+  <circle cx="28" cy="100" r="3" fill="#4A8B15" opacity="0.6"/>
+  <circle cx="132" cy="100" r="3" fill="#4A8B15" opacity="0.6"/>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--   TEXT  —  KOUMÉ  (orange, top row)  -->
+  <!-- ══════════════════════════════════════ -->
+
+  <!-- Shadow / depth effect -->
+  <text x="158" y="195"
+        font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+        font-size="116" font-weight="900" font-style="normal"
+        fill="#A03008" opacity="0.35" letter-spacing="1">KOUMÉ</text>
+
+  <!-- Main KOUMÉ text -->
+  <text x="155" y="192"
+        font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+        font-size="116" font-weight="900"
+        fill="#D94B13" letter-spacing="1">KOUMÉ</text>
+
+  <!-- Chili pepper above the É (decorative accent) -->
+  <g transform="translate(493, 52) rotate(-30)">
+    <ellipse cx="0" cy="0" rx="5" ry="14" fill="#D94B13"/>
+    <path d="M0 -14 Q6 -22 10 -20 Q8 -16 4 -14" fill="#4A8B15"/>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--   TEXT  —  BOX  (green, bottom row)  -->
+  <!-- ══════════════════════════════════════ -->
+
+  <!-- Shadow -->
+  <text x="158" y="310"
+        font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+        font-size="128" font-weight="900"
+        fill="#1E5A06" opacity="0.3" letter-spacing="6">BOX</text>
+
+  <!-- Main BOX text -->
+  <text x="155" y="307"
+        font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+        font-size="128" font-weight="900"
+        fill="#4A8B15" letter-spacing="6">BOX</text>
+</svg>
